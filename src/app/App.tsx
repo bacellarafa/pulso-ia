@@ -497,7 +497,7 @@ export default function App() {
             <div className="bg-purple-50/60 px-3 py-2 rounded-lg border border-purple-100/60">
               <p className="text-[10px] md:text-xs font-semibold text-[#6B46C1] mb-1.5 text-center tracking-wider uppercase">Hub de IA</p>
               <div className="flex items-center justify-center gap-2">
-                <img src={logoIonicaSmall} alt="Iônica" className="h-3 opacity-60" />
+                <img src={logoIonicaSmall} alt="iônIA" className="h-3 opacity-60" />
                 <img src={logoFTD} alt="FTD" className="h-3 opacity-60" />
               </div>
             </div>
@@ -1452,10 +1452,10 @@ export default function App() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-900/50 rounded-full mb-5">
             <Globe className="w-3 h-3 text-purple-300" />
-            <span className="text-xs text-purple-300 font-medium uppercase tracking-widest">Iônica</span>
+            <span className="text-xs text-purple-300 font-medium uppercase tracking-widest">iônIA</span>
           </div>
-          <h3 className="text-white text-2xl font-bold mb-2">Conheça a Iônica</h3>
-          <p className="text-gray-400 text-sm mb-8">Tecnologia e inteligência a serviço da educação</p>
+          <h3 className="text-white text-2xl font-bold mb-2">Conheça a iônIA</h3>
+          <p className="text-gray-400 text-sm mb-8">A robozinha de IA da Iônica</p>
           <div className="rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/30 border border-white/10">
             <video controls className="w-full" preload="metadata">
               <source src={new URL('../imports/ionia-video.mp4', import.meta.url).href} type="video/mp4" />
@@ -2252,10 +2252,10 @@ function EdicaoJunho2026({
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-900/50 rounded-full mb-5">
             <Globe size={12} className="text-purple-300" />
-            <span className="text-xs text-purple-300 font-medium uppercase tracking-widest">Iônica</span>
+            <span className="text-xs text-purple-300 font-medium uppercase tracking-widest">iônIA</span>
           </div>
-          <h3 className="text-white text-2xl font-bold mb-2">Conheça a Iônica</h3>
-          <p className="text-gray-400 text-sm mb-8">Tecnologia e inteligência a serviço da educação</p>
+          <h3 className="text-white text-2xl font-bold mb-2">Conheça a iônIA</h3>
+          <p className="text-gray-400 text-sm mb-8">A robozinha de IA da Iônica</p>
           <div className="rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/30 border border-white/10">
             <video
               controls
