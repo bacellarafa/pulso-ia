@@ -375,7 +375,7 @@ function EdicaoAbril2026({
 export default function App() {
   const [activeSection, setActiveSection] = useState('insight');
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [currentView, setCurrentView] = useState<View>('main');
+  const [currentView, setCurrentView] = useState<View>('edicao-junho-2026');
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
@@ -472,7 +472,7 @@ export default function App() {
                 <p className="text-xs md:text-sm text-gray-700 font-medium leading-tight">
                   Radar de IA na Educação
                 </p>
-                <p className="text-[10px] md:text-xs text-gray-400 mt-0.5">Maio de 2026</p>
+                <p className="text-[10px] md:text-xs text-gray-400 mt-0.5">Junho de 2026</p>
               </div>
             </div>
 
@@ -1347,36 +1347,6 @@ export default function App() {
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Card Junho 2026 — Edição Atual */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-[#6B46C1] p-6 rounded-xl border border-[#6B46C1] hover:shadow-lg transition-all"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <p className="text-xs font-semibold text-purple-200 mb-1">EDIÇÃO ATUAL</p>
-                    <p className="text-sm text-white">Junho de 2026</p>
-                  </div>
-                  <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
-                    <Sparkles className="w-4 h-4 text-white" />
-                  </div>
-                </div>
-                <h3 className="font-bold text-white mb-3">
-                  Ecossistemas fechados definem padrões da IA educacional
-                </h3>
-                <p className="text-sm text-purple-100 mb-4 leading-relaxed">
-                  OpenAI, Anthropic e Google movem peças simultâneas. MEC Sandbox aberto. BNCC Computação obrigatória. A janela estratégica é agora.
-                </p>
-                <button
-                  onClick={() => goToEdicao('edicao-junho-2026')}
-                  className="w-full px-4 py-2 bg-white text-[#6B46C1] rounded-lg font-medium hover:bg-purple-50 transition-colors text-sm"
-                >
-                  Abrir edição
-                </button>
-              </motion.div>
-
               {/* Card Abril 2026 — Edição Anterior */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -1424,6 +1394,24 @@ export default function App() {
               </motion.div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Player de Vídeo — Iônica */}
+      <section className="bg-gray-950 py-16 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-900/50 rounded-full mb-5">
+            <Globe className="w-3 h-3 text-purple-300" />
+            <span className="text-xs text-purple-300 font-medium uppercase tracking-widest">Iônica</span>
+          </div>
+          <h3 className="text-white text-2xl font-bold mb-2">Conheça a Iônica</h3>
+          <p className="text-gray-400 text-sm mb-8">Tecnologia e inteligência a serviço da educação</p>
+          <div className="rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/30 border border-white/10">
+            <video controls className="w-full" preload="metadata">
+              <source src={new URL('../imports/ionia-video.mp4', import.meta.url).href} type="video/mp4" />
+              Seu navegador não suporta vídeo HTML5.
+            </video>
+          </div>
         </div>
       </section>
 
@@ -1567,7 +1555,7 @@ function EdicaoJunho2026({
           <div className="flex items-center gap-3">
             <img src={mascote} alt="PULSO" className="h-9 w-auto" />
             <div>
-              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Atual</p>
+              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Radar de IA na Educação</p>
               <p className="text-sm font-bold text-[#6B46C1] leading-tight">Junho de 2026</p>
             </div>
           </div>
@@ -1576,7 +1564,7 @@ function EdicaoJunho2026({
               onClick={onBackToEdicoes}
               className="text-xs text-gray-500 hover:text-purple-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-purple-50"
             >
-              Todas as edições
+              Edições Anteriores
             </button>
             <button
               onClick={onBack}
