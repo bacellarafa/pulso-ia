@@ -30,7 +30,7 @@ import logoIonicaSmall from '../imports/Logo-ionica_(1)-1.png';
 import logoFTD from '../imports/ftd_com_voce_logo.png';
 import mascoteIA from '../imports/ionia-1.png';
 
-type View = 'main' | 'edicao-abril-2026';
+type View = 'main' | 'edicao-abril-2026' | 'edicao-junho-2026';
 
 function EdicaoAbril2026({
   onBack,
@@ -414,6 +414,24 @@ export default function App() {
     setCurrentView(view);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  if (currentView === 'edicao-junho-2026') {
+    return (
+      <EdicaoJunho2026
+        onBack={() => goToEdicao('main')}
+        onBackToEdicoes={() => {
+          setCurrentView('main');
+          setTimeout(() => {
+            const el = document.getElementById('edicoes');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }}
+        mascote={mascoteIA}
+        logoSmall={logoIonicaSmall}
+        logoFtd={logoFTD}
+      />
+    );
+  }
 
   if (currentView === 'edicao-abril-2026') {
     return (
@@ -1329,6 +1347,37 @@ export default function App() {
             </p>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Card Junho 2026 — Edição Atual */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="bg-[#6B46C1] p-6 rounded-xl border border-[#6B46C1] hover:shadow-lg transition-all"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <p className="text-xs font-semibold text-purple-200 mb-1">EDIÇÃO ATUAL</p>
+                    <p className="text-sm text-white">Junho de 2026</p>
+                  </div>
+                  <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                    <Sparkles className="w-4 h-4 text-white" />
+                  </div>
+                </div>
+                <h3 className="font-bold text-white mb-3">
+                  Ecossistemas fechados definem padrões da IA educacional
+                </h3>
+                <p className="text-sm text-purple-100 mb-4 leading-relaxed">
+                  OpenAI, Anthropic e Google movem peças simultâneas. MEC Sandbox aberto. BNCC Computação obrigatória. A janela estratégica é agora.
+                </p>
+                <button
+                  onClick={() => goToEdicao('edicao-junho-2026')}
+                  className="w-full px-4 py-2 bg-white text-[#6B46C1] rounded-lg font-medium hover:bg-purple-50 transition-colors text-sm"
+                >
+                  Abrir edição
+                </button>
+              </motion.div>
+
+              {/* Card Abril 2026 — Edição Anterior */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -1363,14 +1412,14 @@ export default function App() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="bg-gray-50 p-6 rounded-xl border border-gray-200 flex items-center justify-center"
+                transition={{ delay: 0.2 }}
+                className="bg-gray-50 p-6 rounded-xl border border-dashed border-gray-200 flex items-center justify-center"
               >
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <BookOpen className="w-6 h-6 text-gray-400" />
+                  <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <BookOpen className="w-6 h-6 text-gray-300" />
                   </div>
-                  <p className="text-sm text-gray-500">Mais edições em breve</p>
+                  <p className="text-sm text-gray-400">Próxima edição em breve</p>
                 </div>
               </motion.div>
             </div>
@@ -1427,6 +1476,459 @@ export default function App() {
           <ChevronUp className="w-5 h-5 md:w-6 md:h-6" />
         </motion.button>
       )}
+    </div>
+  );
+}
+
+// ─── Edição Junho 2026 (gerada automaticamente) ───
+
+function EdicaoJunho2026({
+  onBack,
+  onBackToEdicoes,
+  mascote,
+  logoSmall,
+  logoFtd,
+}: {
+  onBack: () => void;
+  onBackToEdicoes: () => void;
+  mascote: string;
+  logoSmall: string;
+  logoFtd: string;
+}) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  const movimentos = [
+    {
+      titulo: "OpenAI lança 'Education for Countries' e certificações para professores",
+      empresa: "OpenAI",
+      data: "Maio 2026",
+      resumo: "A OpenAI expandiu sua estratégia educacional com o programa Education for Countries, trabalhando com governos para personalizar aprendizagem em escala nacional. Paralelamente, lançou os primeiros cursos de certificação em IA — AI Foundations para estudantes e ChatGPT para docentes K-12.",
+      impacto: "OpenAI se posiciona como infraestrutura educacional de governos, não apenas ferramenta de produtividade. Cria barreira de entrada via credencial oficial.",
+      fonte: "https://openai.com/index/edu-for-countries/",
+    },
+    {
+      titulo: "Anthropic + Teach For All: 100 mil professores em 63 países",
+      empresa: "Anthropic",
+      data: "Fevereiro–Maio 2026",
+      resumo: "A Anthropic firmou parceria com a Teach For All para levar o Claude a mais de 100 mil educadores em 63 países, alcançando 1,5 milhão de estudantes. O programa inclui o 'Learning Mode', que usa método socrático em vez de respostas diretas.",
+      impacto: "Posicionamento diferenciado: enquanto concorrentes vendem ferramentas, Anthropic vende método pedagógico. Learning Mode é uma resposta direta às críticas sobre IA que 'faz a lição pelo aluno'.",
+      fonte: "https://www.anthropic.com/news/anthropic-teach-for-all",
+    },
+    {
+      titulo: "Google integra NotebookLM ao Gemini com foco em escolas",
+      empresa: "Google Education",
+      data: "Maio 2026",
+      resumo: "O Google lançou Notebooks integrado ao Gemini, permitindo que estudantes combinem resultados da web com materiais aprovados pelos professores. Inclui prática para o SAT com Princeton Review e feedback de redação via Khan Academy.",
+      impacto: "Estratégia de lock-in: escolas já no ecossistema Google têm fricção zero para adotar. A integração com materiais do professor é o diferencial que edtechs independentes não conseguem replicar.",
+      fonte: "https://blog.google/products-and-platforms/products/education/khan-academy-partnership/",
+    },
+    {
+      titulo: "MEC lança sandbox de IA para educação básica",
+      empresa: "MEC / Governo Federal",
+      data: "Março–Maio 2026",
+      resumo: "O Ministério da Educação abriu inscrições para um sandbox regulatório de IA na educação básica, avaliando soluções por inovação, escalabilidade e governança ética. O documento orientador 'IA na Educação Básica' foi publicado como referência para redes de ensino.",
+      impacto: "Empresas que participarem do sandbox ganham vantagem competitiva no PNLD futuro e em contratos públicos. A regulamentação do CNE prevista para 2º semestre de 2026 vai exigir adequações rápidas.",
+      fonte: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/mec-lanca-orientacoes-sobre-ia-na-educacao-basica",
+    },
+    {
+      titulo: "Arco/Geekie consolida Teacher Assistant com OpenAI",
+      empresa: "Arco Educação / Geekie",
+      data: "2026 (em curso)",
+      resumo: "A Arco Educação — grupo que reúne SAS, COC, Positivo e Geekie — reporta cumprimento das projeções da parceria com OpenAI anunciada em 2024. O Teacher Assistant, que gera planos pedagógicos personalizados para alunos com deficiência, está em expansão.",
+      impacto: "Primeiro grande player brasileiro a ter IA generativa integrada ao fluxo pedagógico, não como add-on. Cria pressão sobre concorrentes como Plurall/SOMOS a acelerarem suas próprias integrações.",
+      fonte: "https://www.geekie.com.br/arco-e-openai-unem-forcas-com-inovacoes-geekie/",
+    },
+    {
+      titulo: "BNCC Computação torna IA obrigatória nas escolas em 2026",
+      empresa: "CNE / Redes de Ensino",
+      data: "2026",
+      resumo: "A partir de 2026, a BNCC Computação passa a ser obrigatória em todas as escolas brasileiras, tornando o trabalho com IA parte estruturada do currículo. O CNE formou comissão especial para publicar diretrizes específicas no 2º semestre.",
+      impacto: "Janela de 12–18 meses para sistemas de ensino que ainda não têm solução de IA curricular. Quem chegar primeiro ao professor com formação e ferramenta integrada captura o mercado.",
+      fonte: "https://www.jovensgenios.com/post/bncc-computação-e-inteligência-artificial-o-que-muda-a-partir-de-2026-e-como-as-redes-podem-se-prep",
+    },
+  ];
+
+  const concorrencia = [
+    { player: "Arco / Geekie", movimento: "Teacher Assistant em expansão + parceria OpenAI consolidada", estrategia: "IA no fluxo pedagógico do professor, não apenas do aluno", maturidade: "Alta", impacto: "Alto" },
+    { player: "Plurall / SOMOS", movimento: "Plurall IA com materiais próprios da SOMOS em ambiente controlado", estrategia: "Walled garden: IA treinada só com conteúdo proprietário", maturidade: "Média-Alta", impacto: "Alto" },
+    { player: "OpenAI", movimento: "Education for Countries + certificações para docentes", estrategia: "Tornar-se infraestrutura educacional de governos", maturidade: "Alta", impacto: "Alto" },
+    { player: "Google Education", movimento: "NotebookLM no Gemini + integração Khan Academy", estrategia: "Lock-in via ecossistema: quem já usa Google não precisa sair", maturidade: "Alta", impacto: "Alto" },
+    { player: "Anthropic", movimento: "Claude for Education + parceria Teach For All", estrategia: "Diferenciação pelo método: Learning Mode socrático", maturidade: "Média-Alta", impacto: "Médio" },
+    { player: "MEC / Gov Federal", movimento: "Sandbox IA + documento orientador + BNCC Computação", estrategia: "Criar padrão regulatório que favorece players com governança", maturidade: "Baixa-Média", impacto: "Alto" },
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Mini header */}
+      <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img src={mascote} alt="PULSO" className="h-9 w-auto" />
+            <div>
+              <p className="text-[10px] text-gray-400 uppercase tracking-widest leading-none mb-0.5">Edição Atual</p>
+              <p className="text-sm font-bold text-[#6B46C1] leading-tight">Junho de 2026</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={onBackToEdicoes}
+              className="text-xs text-gray-500 hover:text-purple-600 transition-colors px-3 py-1.5 rounded-lg hover:bg-purple-50"
+            >
+              Todas as edições
+            </button>
+            <button
+              onClick={onBack}
+              className="flex items-center gap-1.5 text-xs font-medium text-purple-600 hover:text-purple-800 transition-colors bg-purple-50 hover:bg-purple-100 px-3 py-1.5 rounded-lg"
+            >
+              <ArrowLeft size={12} />
+              Voltar
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-6xl mx-auto px-6 py-10 space-y-14">
+
+        {/* Insight da Edição */}
+        <section className="bg-gradient-to-br from-[#6B46C1] to-[#4C2E8A] rounded-2xl p-8 md:p-10 text-white">
+          <div className="flex items-center gap-2 mb-5">
+            <Sparkles size={18} className="text-purple-200" />
+            <span className="text-purple-200 font-semibold text-xs uppercase tracking-widest">Insight da Edição — Junho 2026</span>
+          </div>
+          <p className="text-2xl md:text-3xl font-bold leading-relaxed mb-6">
+            A corrida da IA na educação entrou na fase dos ecossistemas fechados — quem controla o currículo, o professor e a plataforma ao mesmo tempo vai definir os padrões do mercado pelos próximos 10 anos.
+          </p>
+          <div className="border-t border-white/20 pt-5 mt-5">
+            <p className="text-purple-100 text-sm leading-relaxed">
+              Em menos de 60 dias, OpenAI lançou certificações para professores, Anthropic chegou a 63 países via Teach For All, Google integrou NotebookLM ao Gemini e o MEC brasileiro abriu sandbox regulatório. O sinal é inequívoco: a competição saiu do nível de "ferramenta útil" e chegou no nível de "quem define como se ensina".
+            </p>
+          </div>
+        </section>
+
+        {/* Por que está acontecendo */}
+        <section>
+          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <TrendingUp size={20} className="text-[#6B46C1]" />
+            Por que isso está acontecendo
+          </h3>
+          <div className="bg-gray-50 rounded-xl p-6 space-y-4 text-gray-700 leading-relaxed">
+            <p><strong>Tecnológico:</strong> Os modelos de linguagem atingiram maturidade suficiente para integração curricular real — não apenas como assistentes, mas como tutores com método pedagógico definido (vide o Learning Mode socrático da Anthropic). A barreira técnica caiu, agora a disputa é de distribuição e relacionamento institucional.</p>
+            <p><strong>Regulatório:</strong> O Brasil vive um momento único: BNCC Computação obrigatória em 2026, sandbox do MEC aberto, e diretrizes do CNE a caminho. Quem estiver dentro do sandbox tem vantagem direta nos próximos ciclos do PNLD. É uma janela que se fecha em 12–18 meses.</p>
+            <p><strong>Competitivo:</strong> Google, OpenAI e Anthropic perceberam que o canal de distribuição na educação não é a loja de apps — é o professor. Daí a corrida por certificações, formações e parcerias com redes de ensino. Quem treina o professor treina o aluno.</p>
+            <p><strong>Operacional:</strong> Os grandes grupos educacionais brasileiros (Arco, SOMOS, Positivo) têm conteúdo proprietário que nenhuma big tech tem. Isso os coloca em posição única: podem criar walled gardens de IA que os modelos genéricos não conseguem replicar — mas precisam de velocidade de execução que historicamente não têm.</p>
+          </div>
+        </section>
+
+        {/* Resumo Executivo */}
+        <section>
+          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <FileText size={20} className="text-[#6B46C1]" />
+            Resumo Executivo
+          </h3>
+          <div className="bg-purple-50 rounded-xl p-6">
+            <ul className="space-y-3">
+              {[
+                "OpenAI e Anthropic transformaram educação em vetor de expansão geopolítica — Education for Countries e Teach For All são jogadas de distribuição global, não produtos.",
+                "O MEC Sandbox cria uma trilha regulatória express: empresas que entrarem agora moldam os critérios que vão valer nos próximos contratos públicos.",
+                "BNCC Computação obrigatória em 2026 gera demanda imediata em todo sistema de ensino privado — quem chegar com formação docente + ferramenta integrada captura o mercado.",
+                "Arco/Geekie é o player brasileiro mais avançado em IA generativa no fluxo pedagógico, mas a janela de vantagem se estreita com o movimento das big techs.",
+                "Google usa escola como canal de lock-in familiar: quem já vive no Google Workspace adota NotebookLM com zero fricção — estratégia de ecossistema difícil de combater por custo.",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="text-[#6B46C1] font-bold text-sm mt-0.5 flex-shrink-0">{i + 1}.</span>
+                  <span className="text-gray-700 text-sm leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Principais Movimentos */}
+        <section>
+          <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+            <Zap size={20} className="text-[#6B46C1]" />
+            Principais Movimentos
+          </h3>
+          <div className="grid gap-5 md:grid-cols-2">
+            {movimentos.map((m, i) => (
+              <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-5">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <h4 className="font-semibold text-gray-900 text-sm leading-snug">{m.titulo}</h4>
+                  <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-600 flex-shrink-0">
+                    <ExternalLink size={13} />
+                  </a>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-3">
+                  <span className="inline-flex items-center gap-1 text-xs bg-purple-50 text-purple-700 px-2 py-1 rounded-full font-medium">
+                    <Users size={10} /> {m.empresa}
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-xs bg-gray-50 text-gray-500 px-2 py-1 rounded-full">
+                    <Calendar size={10} /> {m.data}
+                  </span>
+                </div>
+                <p className="text-xs text-gray-600 mb-3 leading-relaxed">{m.resumo}</p>
+                <div className="bg-purple-50 rounded-lg p-3">
+                  <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
+                  <p className="text-xs text-gray-700 leading-relaxed">{m.impacto}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Concorrência Direta */}
+        <section>
+          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <BarChart3 size={20} className="text-[#6B46C1]" />
+            Concorrência Direta
+          </h3>
+          <div className="overflow-x-auto rounded-xl border border-gray-100">
+            <table className="w-full text-sm">
+              <thead className="bg-purple-50">
+                <tr>
+                  {["Player", "Movimento recente", "Estratégia implícita", "Maturidade IA", "Impacto competitivo"].map(h => (
+                    <th key={h} className="px-4 py-3 text-left text-xs font-semibold text-purple-700 uppercase tracking-wider">{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {concorrencia.map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-purple-50/20'}>
+                    <td className="px-4 py-3 font-semibold text-gray-900 text-xs whitespace-nowrap">{row.player}</td>
+                    <td className="px-4 py-3 text-gray-600 text-xs">{row.movimento}</td>
+                    <td className="px-4 py-3 text-gray-600 text-xs">{row.estrategia}</td>
+                    <td className="px-4 py-3 text-xs">
+                      <span className={`px-2 py-0.5 rounded-full font-medium ${row.maturidade.includes('Alta') ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
+                        {row.maturidade}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-xs">
+                      <span className={`px-2 py-0.5 rounded-full font-medium ${row.impacto === 'Alto' ? 'bg-red-100 text-red-700' : 'bg-blue-100 text-blue-700'}`}>
+                        {row.impacto}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Diferenciação vs Commodity */}
+        <section>
+          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <Target size={20} className="text-[#6B46C1]" />
+            Diferenciação vs Commodity
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-red-50 rounded-xl p-5">
+              <p className="font-semibold text-red-700 mb-3 text-xs uppercase tracking-wide flex items-center gap-1">
+                <TrendingDown size={12} /> Virou commodity
+              </p>
+              <ul className="space-y-2 text-sm text-gray-700">
+                {[
+                  "Chatbot para tirar dúvidas dos alunos",
+                  "Geração de atividades e provas",
+                  "Resumo automático de conteúdo",
+                  "Correção ortográfica e gramatical",
+                ].map((item, i) => <li key={i} className="flex items-start gap-2"><span className="text-red-400 mt-0.5">▸</span>{item}</li>)}
+              </ul>
+            </div>
+            <div className="bg-green-50 rounded-xl p-5">
+              <p className="font-semibold text-green-700 mb-3 text-xs uppercase tracking-wide flex items-center gap-1">
+                <CheckCircle size={12} /> Ainda diferencia
+              </p>
+              <ul className="space-y-2 text-sm text-gray-700">
+                {[
+                  "IA treinada com conteúdo curricular próprio",
+                  "Integração com dado de desempenho longitudinal do aluno",
+                  "Método pedagógico embutido (socrático, adaptativo)",
+                  "Formação docente integrada à ferramenta",
+                ].map((item, i) => <li key={i} className="flex items-start gap-2"><span className="text-green-500 mt-0.5">▸</span>{item}</li>)}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Hype vs Tendência Real */}
+        <section>
+          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <AlertCircle size={20} className="text-[#6B46C1]" />
+            Hype vs Tendência Real
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-orange-50 rounded-xl p-5">
+              <p className="font-semibold text-orange-700 mb-3 text-xs uppercase tracking-wide">Superestimado</p>
+              <ul className="space-y-3 text-sm text-gray-700">
+                {[
+                  { titulo: "IA vai substituir o professor", desc: "Nenhum player relevante está apostando nisso. A corrida é pelo professor como canal." },
+                  { titulo: "Personalização total em tempo real", desc: "Ainda há mais promessa do que entrega comprovada em sala de aula." },
+                  { titulo: "Adoção orgânica bottom-up", desc: "Sem formação docente estruturada, a ferramenta não vira prática." },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-orange-400 mt-0.5 flex-shrink-0">▸</span>
+                    <span><strong>{item.titulo}:</strong> {item.desc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-blue-50 rounded-xl p-5">
+              <p className="font-semibold text-blue-700 mb-3 text-xs uppercase tracking-wide">Tendência real</p>
+              <ul className="space-y-3 text-sm text-gray-700">
+                {[
+                  { titulo: "IA como copiloto do professor", desc: "Planejamento, diferenciação e feedback — fluxo real de adoção." },
+                  { titulo: "Regulação acelerando, não freando", desc: "MEC Sandbox e BNCC Computação criam demanda regulatória, não barreira." },
+                  { titulo: "Ecossistemas fechados ganham mercado", desc: "Conteúdo proprietário + IA + formação = combinação difícil de bater." },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-blue-400 mt-0.5 flex-shrink-0">▸</span>
+                    <span><strong>{item.titulo}:</strong> {item.desc}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Prioridades Estratégicas */}
+        <section>
+          <h3 className="text-xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+            <Lightbulb size={20} className="text-[#6B46C1]" />
+            Prioridades Estratégicas
+          </h3>
+          <p className="text-sm text-gray-500 mb-5">Oportunidades consideradas mais relevantes com base nos sinais observados</p>
+          <div className="space-y-4">
+            {[
+              {
+                num: "01",
+                titulo: "Entrar no MEC Sandbox — janela fechando",
+                problema: "A regulação do CNE chegará no 2º semestre de 2026 e vai exigir adequações. Quem moldou os critérios do sandbox terá vantagem natural.",
+                oportunidade: "Submeter solução ao sandbox com foco em governança ética e escalabilidade — critérios explícitos de avaliação.",
+                impacto: "Posicionamento privilegiado em contratos públicos e PNLD futuros.",
+                justificativa: "O sandbox está em fase de seleção agora. Cada ciclo sem participação é uma posição perdida.",
+              },
+              {
+                num: "02",
+                titulo: "Formação docente integrada à ferramenta",
+                problema: "A BNCC Computação obriga as escolas a ensinar IA, mas 79% dos professores ainda não sabem como fazer isso pedagogicamente.",
+                oportunidade: "Criar trilha de formação embutida na plataforma — professor aprende usando, não em curso separado.",
+                impacto: "Retenção e adoção acelerada. Professores formados na ferramenta não trocam de plataforma.",
+                justificativa: "OpenAI e Anthropic já perceberam: o professor é o canal. Quem chegar primeiro com formação + ferramenta integradas domina o ciclo.",
+              },
+              {
+                num: "03",
+                titulo: "IA com dado longitudinal do aluno",
+                problema: "Ferramentas genéricas não têm histórico de aprendizagem. As soluções proprietárias dos grupos educacionais têm — mas não estão usando.",
+                oportunidade: "Conectar a IA ao histórico de desempenho real do aluno para recomendações que nenhuma big tech consegue dar.",
+                impacto: "Diferenciação defensável: Google e OpenAI não têm os dados curriculares dos alunos brasileiros.",
+                justificativa: "É a vantagem competitiva que os grupos educacionais brasileiros têm e ainda não exploram. A janela existe enquanto as big techs não constroem parcerias locais.",
+              },
+            ].map((p, i) => (
+              <div key={i} className="bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 border border-purple-100">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-3xl font-black text-purple-200">{p.num}</span>
+                  <h4 className="font-bold text-gray-900">{p.titulo}</h4>
+                </div>
+                <div className="grid md:grid-cols-2 gap-3 text-sm">
+                  <div><span className="font-semibold text-gray-600">Problema: </span><span className="text-gray-700">{p.problema}</span></div>
+                  <div><span className="font-semibold text-gray-600">Oportunidade: </span><span className="text-gray-700">{p.oportunidade}</span></div>
+                  <div><span className="font-semibold text-gray-600">Impacto: </span><span className="text-gray-700">{p.impacto}</span></div>
+                  <div><span className="font-semibold text-gray-600">Por que agir agora: </span><span className="text-gray-700">{p.justificativa}</span></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Sinais Estratégicos */}
+        <section>
+          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <Brain size={20} className="text-[#6B46C1]" />
+            Sinais Estratégicos
+          </h3>
+          <div className="bg-gray-50 rounded-xl p-6 space-y-4 text-gray-700 leading-relaxed text-sm">
+            <p>O movimento da OpenAI com "Education for Countries" não é produto educacional — é geopolítica. Ao trabalhar com governos para "personalizar aprendizagem em escala nacional", a OpenAI está se posicionando como parceira de Estado, não de escola. Isso muda o campo de batalha: a disputa não é mais por assinatura de professor, é por política pública.</p>
+            <p>A decisão da Anthropic de usar método socrático no Learning Mode é o sinal mais sofisticado da rodada. É o único player que respondeu diretamente à crítica pedagógica central da IA na educação ("faz o trabalho pelo aluno"). Se isso virar padrão de mercado — e pode virar — quem não tiver posição pedagógica definida vai parecer irresponsável.</p>
+            <p>A BNCC Computação obrigatória em 2026 é o maior catalisador de demanda que o mercado EdTech brasileiro já viu. Mas a armadilha é óbvia: vender "produto que cumpre a BNCC" vira commodity em 18 meses. A vantagem real está em quem integra a IA ao desenvolvimento de competência docente — não apenas ao conteúdo do aluno.</p>
+            <p>O MEC Sandbox é um sinal de que o governo brasileiro quer ser agente ativo, não apenas regulador passivo. Para players privados, isso é uma faca de dois gumes: quem participar molda o padrão; quem não participar se submete a ele. A decisão de entrar ou não no sandbox é estratégica, não operacional.</p>
+          </div>
+        </section>
+
+        {/* Comparação com edição anterior */}
+        <section>
+          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <BookOpen size={20} className="text-[#6B46C1]" />
+            Comparação com a Edição Anterior (Maio 2026)
+          </h3>
+          <div className="bg-gray-50 rounded-xl p-6 text-sm text-gray-700 space-y-3 leading-relaxed">
+            <p><strong>O que evoluiu:</strong> Em Maio, o insight central era a disputa por ecossistemas integrados. Em Junho, isso se materializou em movimentos concretos: OpenAI lançou certificações, Google integrou NotebookLM ao Gemini e o MEC abriu o sandbox. A tese virou realidade em 30 dias.</p>
+            <p><strong>O que continua:</strong> A posição de Arco/Geekie como player brasileiro mais avançado se mantém, mas o cerco das big techs está mais apertado. A vantagem de conteúdo proprietário ainda existe, mas a janela para monetizá-la está diminuindo.</p>
+            <p><strong>O que é novo:</strong> O vetor regulatório ganhou força — BNCC Computação obrigatória e MEC Sandbox ativo criaram urgência que não existia na edição anterior. A disputa não é mais só tecnológica ou comercial: agora tem componente de política pública que muda as regras do jogo.</p>
+          </div>
+        </section>
+
+        {/* Fontes */}
+        <section className="border-t border-gray-100 pt-8">
+          <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">Fontes</h3>
+          <ul className="space-y-1.5">
+            {[
+              ["OpenAI Education for Countries", "https://openai.com/index/edu-for-countries/"],
+              ["OpenAI Certification Courses", "https://openai.com/index/openai-certificate-courses/"],
+              ["Anthropic + Teach For All", "https://www.anthropic.com/news/anthropic-teach-for-all"],
+              ["Claude for Education", "https://www.anthropic.com/news/introducing-claude-for-education"],
+              ["Google + Khan Academy partnership (Bett 2026)", "https://blog.google/products-and-platforms/products/education/khan-academy-partnership/"],
+              ["MEC lança orientações sobre IA na educação básica", "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/mec-lanca-orientacoes-sobre-ia-na-educacao-basica"],
+              ["BNCC Computação e IA obrigatórias em 2026", "https://www.jovensgenios.com/post/bncc-computação-e-inteligência-artificial-o-que-muda-a-partir-de-2026"],
+              ["Arco + OpenAI + Geekie", "https://www.geekie.com.br/arco-e-openai-unem-forcas-com-inovacoes-geekie/"],
+              ["CNE regulamentação IA educação", "https://prosanova.com.br/cne-aprova-regulamentacao-sobre-inteligencia-artificial-em-escolas-e-universidades/"],
+              ["EdTech 2026: hype acabou", "https://startups.com.br/artigo/edtech-em-2026-o-hype-acabou-agora-e-hora-de-provar-valor-real-e-impactos-significativos/"],
+            ].map(([label, url], i) => (
+              <li key={i}>
+                <a href={url} target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline text-xs">
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+      </main>
+
+      {/* Player de Vídeo — Iônica */}
+      <section className="bg-gray-950 py-16 px-6 mt-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-900/50 rounded-full mb-5">
+            <Globe size={12} className="text-purple-300" />
+            <span className="text-xs text-purple-300 font-medium uppercase tracking-widest">Iônica</span>
+          </div>
+          <h3 className="text-white text-2xl font-bold mb-2">Conheça a Iônica</h3>
+          <p className="text-gray-400 text-sm mb-8">Tecnologia e inteligência a serviço da educação</p>
+          <div className="rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/30 border border-white/10">
+            <video
+              controls
+              className="w-full"
+              poster=""
+              preload="metadata"
+            >
+              <source src={new URL('../imports/ionia-video.mp4', import.meta.url).href} type="video/mp4" />
+              Seu navegador não suporta vídeo HTML5.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-gray-800 bg-gray-950">
+        <div className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img src={logoSmall} alt="Iônica" className="h-6 w-auto opacity-80" />
+            <span className="text-xs text-gray-500">Pulso IA · Junho 2026</span>
+          </div>
+          <img src={logoFtd} alt="FTD" className="h-5 w-auto opacity-40" />
+        </div>
+      </footer>
     </div>
   );
 }
