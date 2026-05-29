@@ -375,7 +375,7 @@ function EdicaoAbril2026({
 export default function App() {
   const [activeSection, setActiveSection] = useState('insight');
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [currentView, setCurrentView] = useState<View>('edicao-junho-2026');
+  const [currentView, setCurrentView] = useState<View>('main');
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
@@ -531,15 +531,17 @@ export default function App() {
             </div>
 
             <h2 className="text-4xl md:text-6xl text-gray-900 font-bold mb-8 leading-tight">
-              A próxima disputa da IA na educação<br />
-              não será pela melhor <span className="text-[#6B46C1]">funcionalidade</span><br />
-              <span className="text-[#FF6B35]">será pelo ecossistema mais integrado</span>
+              A corrida da IA na educação entrou na fase<br />
+              dos <span className="text-[#6B46C1]">ecossistemas fechados</span> —<br />
+              <span className="text-[#FF6B35]">quem controla currículo, professor e plataforma vence</span>
             </h2>
 
             <div className="max-w-4xl mx-auto mb-12">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                O mercado de IA educacional começa a migrar de funcionalidades isoladas para
-                <strong className="text-[#6B46C1]"> ecossistemas operacionais inteligentes integrados</strong>.
+                Em menos de 60 dias, OpenAI lançou certificações para professores, Anthropic chegou a 63 países,
+                Google integrou NotebookLM ao Gemini e o MEC abriu sandbox regulatório.
+                A disputa saiu do nível de <strong className="text-[#6B46C1]">ferramenta útil</strong> e chegou no nível de
+                <strong className="text-[#FF6B35]"> quem define como se ensina</strong>.
               </p>
 
               <div className="bg-white p-8 rounded-2xl border-2 border-purple-100 shadow-sm">
@@ -550,7 +552,7 @@ export default function App() {
                       <TrendingUp className="w-5 h-5 text-[#6B46C1]" />
                     </div>
                     <p className="text-sm text-gray-600">
-                      <strong>Maturidade técnica:</strong> Players dominaram features básicas e agora competem em integração
+                      <strong>Tecnológico:</strong> Modelos maduros o suficiente para integração curricular real — a barreira técnica caiu, agora a disputa é de distribuição
                     </p>
                   </div>
                   <div>
@@ -558,7 +560,7 @@ export default function App() {
                       <Shield className="w-5 h-5 text-[#FF6B35]" />
                     </div>
                     <p className="text-sm text-gray-600">
-                      <strong>Pressão regulatória:</strong> Governança e rastreabilidade forçam soluções mais estruturadas
+                      <strong>Regulatório:</strong> BNCC Computação obrigatória em 2026 + MEC Sandbox + diretrizes CNE criam janela de 12–18 meses
                     </p>
                   </div>
                   <div>
@@ -566,7 +568,7 @@ export default function App() {
                       <Target className="w-5 h-5 text-[#6B46C1]" />
                     </div>
                     <p className="text-sm text-gray-600">
-                      <strong>Demanda operacional:</strong> Escolas querem IA que resolva fluxos completos, não features pontuais
+                      <strong>Competitivo:</strong> Google, OpenAI e Anthropic perceberam que o canal de distribuição na educação é o professor — não a loja de apps
                     </p>
                   </div>
                 </div>
@@ -679,57 +681,57 @@ export default function App() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  org: "CNE",
-                  title: "Nova regulamentação sobre uso de IA na educação",
-                  date: "11/05/2026",
-                  source: "G1",
-                  url: "https://g1.globo.com/educacao/noticia/2026/05/11/cne-aprova-nova-regulamentacao-sobre-uso-de-ia-em-escolas-e-universidades.ghtml",
-                  impact: "Mudança de fase regulatória: IA institucionalizada com necessidade de governança e rastreabilidade",
+                  org: "OpenAI",
+                  title: "Education for Countries + certificações para docentes",
+                  date: "Maio 2026",
+                  source: "OpenAI",
+                  url: "https://openai.com/index/edu-for-countries/",
+                  impact: "OpenAI se posiciona como infraestrutura educacional de governos — a disputa migrou de produto para política pública",
                   color: "from-purple-600 to-purple-700"
                 },
                 {
-                  org: "MEC",
-                  title: "Referencial de IA na Educação Básica",
-                  date: "Abril/2026",
-                  source: "MEC",
-                  url: "https://www.gov.br/mec/pt-br/referencial-de-ia-na-educacao",
-                  impact: "Consolidação de diretrizes oficiais — IA entrando na operação escolar",
-                  color: "from-purple-500 to-purple-600"
-                },
-                {
-                  org: "Moderna",
-                  title: "Moderna Core: ecossistema integrado",
-                  date: "05/05/2026",
-                  source: "Revista Educação",
-                  url: "https://revistaeducacao.com.br/2026/05/05/moderna-core-bett/",
-                  impact: "IA + conteúdo + analytics + jornada — mudança competitiva em direção a plataformas integradas",
+                  org: "Anthropic",
+                  title: "Claude for Education + Teach For All: 100k professores em 63 países",
+                  date: "Fev–Mai 2026",
+                  source: "Anthropic",
+                  url: "https://www.anthropic.com/news/anthropic-teach-for-all",
+                  impact: "Learning Mode socrático é resposta direta à crítica 'IA faz a lição pelo aluno' — diferenciação pedagógica real",
                   color: "from-orange-500 to-orange-600"
                 },
                 {
-                  org: "Positivo",
-                  title: "Parceria com AWS para IA generativa",
-                  date: "2026",
-                  source: "AWS Brasil",
-                  url: "https://aws.amazon.com/pt/blogs/aws-brasil/como-o-educacional-area-da-positivo-tecnologia-revoluciona-a-educacao-com-ia-generativa/",
-                  impact: "IA generativa em escala operacional — maturidade técnica crescente no setor",
+                  org: "Google",
+                  title: "NotebookLM integrado ao Gemini + Khan Academy + SAT Princeton Review",
+                  date: "Maio 2026",
+                  source: "Google Blog",
+                  url: "https://blog.google/products-and-platforms/products/education/khan-academy-partnership/",
+                  impact: "Lock-in via ecossistema: escolas no Google Workspace adotam com zero fricção — estratégia impossível de bater por custo",
                   color: "from-violet-500 to-violet-600"
                 },
                 {
-                  org: "Plurall",
-                  title: "Plurall 2026: analytics operacional",
+                  org: "MEC",
+                  title: "Sandbox de IA na Educação Básica aberto",
+                  date: "Mar–Mai 2026",
+                  source: "gov.br",
+                  url: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/mec-lanca-orientacoes-sobre-ia-na-educacao-basica",
+                  impact: "Quem participar do sandbox molda os critérios do próximo PNLD — janela estratégica que se fecha em meses",
+                  color: "from-purple-500 to-purple-600"
+                },
+                {
+                  org: "Arco / Geekie",
+                  title: "Teacher Assistant com OpenAI em expansão",
                   date: "2026",
-                  source: "YouTube",
-                  url: "https://www.youtube.com/watch?v=dxmO6eDJqDY",
-                  impact: "Transformação de dados em ação pedagógica — fortalecimento da inteligência educacional",
+                  source: "Geekie",
+                  url: "https://www.geekie.com.br/arco-e-openai-unem-forcas-com-inovacoes-geekie/",
+                  impact: "Primeiro player BR com IA no fluxo pedagógico real — pressiona Plurall/SOMOS a acelerarem",
                   color: "from-purple-600 to-violet-600"
                 },
                 {
-                  org: "Árvore",
-                  title: "Aquisição da Typper",
-                  date: "Set/2025",
-                  source: "PublishNews",
-                  url: "https://www.publishnews.com.br/materias/2025/09/24/arvore-adquire-a-typper-e-reforca-estrategia-em-ia-na-educacao",
-                  impact: "Consolidação de ecossistema via M&A — fortalecimento de plataforma proprietária",
+                  org: "BNCC",
+                  title: "Computação e IA obrigatórias em todas as escolas",
+                  date: "2026",
+                  source: "Jovens Gênios",
+                  url: "https://www.jovensgenios.com/post/bncc-computação-e-inteligência-artificial-o-que-muda-a-partir-de-2026",
+                  impact: "Maior catalisador de demanda EdTech do Brasil — quem integrar IA ao desenvolvimento docente domina o ciclo",
                   color: "from-purple-700 to-purple-800"
                 }
               ].map((item, idx) => (
@@ -812,46 +814,46 @@ export default function App() {
                 <tbody>
                   {[
                     {
-                      player: "Moderna (Santillana)",
-                      movimento: "Moderna Core — ecossistema integrado",
-                      estrategia: "Plataforma completa: conteúdo + IA + analytics + acompanhamento",
+                      player: "OpenAI",
+                      movimento: "Education for Countries + certificações docentes",
+                      estrategia: "Infraestrutura educacional de governos — não apenas ferramenta",
+                      maturidade: "●●●●●",
+                      impacto: "Alto — redefine o campo de batalha para política pública"
+                    },
+                    {
+                      player: "Google Education",
+                      movimento: "NotebookLM no Gemini + Khan Academy + SAT Princeton Review",
+                      estrategia: "Lock-in via ecossistema: zero fricção para quem já usa Google",
+                      maturidade: "●●●●●",
+                      impacto: "Alto — estratégia impossível de bater por custo"
+                    },
+                    {
+                      player: "Anthropic",
+                      movimento: "Claude for Education + Teach For All (63 países)",
+                      estrategia: "Diferenciação pedagógica: Learning Mode socrático",
                       maturidade: "●●●●○",
-                      impacto: "Alto — redefinindo benchmark do setor"
+                      impacto: "Alto — único com posição pedagógica definida"
                     },
                     {
-                      player: "Positivo",
-                      movimento: "Parceria AWS para IA generativa",
-                      estrategia: "Infraestrutura enterprise + IA em escala",
+                      player: "Arco / Geekie",
+                      movimento: "Teacher Assistant com OpenAI em expansão",
+                      estrategia: "IA no fluxo pedagógico real do professor",
                       maturidade: "●●●●○",
-                      impacto: "Alto — capacidade técnica robusta"
+                      impacto: "Alto — player BR mais avançado, mas janela se estreita"
                     },
                     {
-                      player: "Plurall (Somos)",
-                      movimento: "Analytics operacional 2026",
-                      estrategia: "Inteligência educacional acionável",
-                      maturidade: "●●●●○",
-                      impacto: "Alto — dados virando ação pedagógica"
-                    },
-                    {
-                      player: "Árvore",
-                      movimento: "Aquisição Typper",
-                      estrategia: "Consolidação e expansão de ecossistema",
+                      player: "Plurall (SOMOS)",
+                      movimento: "Plurall IA com materiais proprietários SOMOS",
+                      estrategia: "Walled garden: IA treinada só com conteúdo próprio",
                       maturidade: "●●●○○",
-                      impacto: "Médio — fortalecimento via M&A"
+                      impacto: "Médio-Alto — precisa acelerar para não perder terreno"
                     },
                     {
-                      player: "Geekie",
-                      movimento: "IA adaptativa",
-                      estrategia: "Personalização em escala",
-                      maturidade: "●●●○○",
-                      impacto: "Médio — foco em adaptatividade"
-                    },
-                    {
-                      player: "SAS",
-                      movimento: "Plataforma integrada",
-                      estrategia: "Ecossistema educacional completo",
-                      maturidade: "●●●○○",
-                      impacto: "Médio — força no premium"
+                      player: "MEC / Gov Federal",
+                      movimento: "Sandbox IA + BNCC Computação obrigatória",
+                      estrategia: "Agente ativo, não regulador passivo — molda o padrão do mercado",
+                      maturidade: "●●○○○",
+                      impacto: "Alto — quem participar do sandbox define as regras"
                     }
                   ].map((item, idx) => (
                     <motion.tr
@@ -901,22 +903,22 @@ export default function App() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  player: "Khan Academy",
-                  focus: "Khanmigo - AI Tutor",
-                  approach: "IA tutor personalizado integrado à plataforma de aprendizagem",
-                  lesson: "Copiloto educacional como core product"
-                },
-                {
-                  player: "OpenAI",
-                  focus: "ChatGPT Edu",
-                  approach: "IA conversacional aplicada à educação com governança institucional",
-                  lesson: "Infraestrutura IA enterprise para educação"
-                },
-                {
                   player: "Anthropic",
-                  focus: "Claude for Education",
-                  approach: "IA segura e interpretável para contextos educacionais",
-                  lesson: "Transparência e segurança como diferencial"
+                  focus: "Learning Mode Socrático",
+                  approach: "Claude for Education usa método socrático — faz perguntas em vez de dar respostas diretas, desenvolvendo raciocínio do aluno",
+                  lesson: "Método pedagógico embutido na IA é o próximo diferencial — não a capacidade técnica"
+                },
+                {
+                  player: "Google + Khan Academy",
+                  focus: "NotebookLM + Gemini",
+                  approach: "Estudante combina busca na web com materiais aprovados pelo professor dentro do mesmo ambiente — reduz fricção de adoção a zero",
+                  lesson: "Ecossistema integrado vence feature isolada mesmo quando a feature é melhor"
+                },
+                {
+                  player: "AFT + Microsoft + OpenAI + Anthropic",
+                  focus: "National Academy for AI Instruction",
+                  approach: "Sindicato de professores americano co-criou academia de formação em IA junto com as big techs — professores como parceiros, não alvos",
+                  lesson: "Formação docente co-criada com educadores tem adoção 10x maior que treinamento top-down"
                 }
               ].map((item, idx) => (
                 <motion.div
@@ -977,11 +979,11 @@ export default function App() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Geração simples de conteúdo",
-                    "Chat IA genérico",
-                    "Funcionalidades isoladas de IA",
-                    "Respostas automáticas básicas",
-                    "Resumos e sínteses simples"
+                    "Chatbot para tirar dúvidas dos alunos",
+                    "Geração de atividades e provas",
+                    "Resumo automático de conteúdo",
+                    "Correção ortográfica e gramatical",
+                    "Tradução e simplificação de texto"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
@@ -1005,13 +1007,12 @@ export default function App() {
                 </div>
                 <ul className="space-y-3">
                   {[
-                    "Ecossistema integrado completo",
-                    "Analytics pedagógico acionável",
-                    "Telemetria e observabilidade",
-                    "Personalização operacional em escala",
-                    "Integração da jornada escolar",
-                    "Governança e rastreabilidade",
-                    "Inteligência educacional contextual"
+                    "IA treinada com conteúdo curricular próprio",
+                    "Integração com histórico de desempenho longitudinal",
+                    "Método pedagógico embutido (socrático, adaptativo)",
+                    "Formação docente integrada à ferramenta",
+                    "Participação no sandbox regulatório do MEC",
+                    "Certificação e credencial oficial para professores"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -1024,7 +1025,7 @@ export default function App() {
 
             <div className="mt-8 p-6 bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] text-white rounded-xl">
               <p className="text-lg font-semibold">
-                💡 A vantagem competitiva migrou de "ter IA" para "ter IA operacional integrada ao ecossistema educacional"
+                💡 A vantagem competitiva em 2026 não é ter IA — é ter conteúdo próprio + dado longitudinal + método pedagógico + formação docente integrados numa única plataforma
               </p>
             </div>
           </motion.div>
@@ -1064,21 +1065,21 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   <div className="p-4 bg-orange-50 rounded-lg">
-                    <p className="font-semibold text-gray-900 mb-2">"IA mágica"</p>
+                    <p className="font-semibold text-gray-900 mb-2">IA vai substituir o professor</p>
                     <p className="text-sm text-gray-600">
-                      Promessas de transformação instantânea sem mudança de processo
+                      Nenhum player relevante está apostando nisso. A corrida é pelo professor como canal de distribuição.
                     </p>
                   </div>
                   <div className="p-4 bg-orange-50 rounded-lg">
-                    <p className="font-semibold text-gray-900 mb-2">Funcionalidades isoladas</p>
+                    <p className="font-semibold text-gray-900 mb-2">Personalização total em tempo real</p>
                     <p className="text-sm text-gray-600">
-                      Features desconectadas que não geram valor operacional
+                      Ainda há mais promessa do que entrega comprovada em sala de aula real.
                     </p>
                   </div>
                   <div className="p-4 bg-orange-50 rounded-lg">
-                    <p className="font-semibold text-gray-900 mb-2">Excesso de geração de conteúdo</p>
+                    <p className="font-semibold text-gray-900 mb-2">Adoção orgânica bottom-up</p>
                     <p className="text-sm text-gray-600">
-                      Produção massiva sem contexto pedagógico ou supervisão
+                      Sem formação docente estruturada, a ferramenta não vira prática pedagógica.
                     </p>
                   </div>
                 </div>
@@ -1098,27 +1099,27 @@ export default function App() {
                 </div>
                 <div className="space-y-4">
                   <div className="p-4 bg-purple-50 rounded-lg">
-                    <p className="font-semibold text-gray-900 mb-2">IA operacional</p>
+                    <p className="font-semibold text-gray-900 mb-2">IA como copiloto do professor</p>
                     <p className="text-sm text-gray-600">
-                      Integrada aos fluxos escolares, gerando valor mensurável
+                      Planejamento, diferenciação e feedback — fluxo real de adoção comprovado.
                     </p>
                   </div>
                   <div className="p-4 bg-purple-50 rounded-lg">
-                    <p className="font-semibold text-gray-900 mb-2">Analytics acionável</p>
+                    <p className="font-semibold text-gray-900 mb-2">Regulação acelerando, não freando</p>
                     <p className="text-sm text-gray-600">
-                      Dados que se transformam em recomendações práticas
+                      MEC Sandbox e BNCC Computação criam demanda regulatória — janela de 12-18 meses.
                     </p>
                   </div>
                   <div className="p-4 bg-purple-50 rounded-lg">
-                    <p className="font-semibold text-gray-900 mb-2">Copilotos educacionais</p>
+                    <p className="font-semibold text-gray-900 mb-2">Ecossistemas fechados ganham mercado</p>
                     <p className="text-sm text-gray-600">
-                      IA que amplia capacidade do professor, não o substitui
+                      Conteúdo proprietário + IA + formação = combinação difícil de bater.
                     </p>
                   </div>
                   <div className="p-4 bg-purple-50 rounded-lg">
-                    <p className="font-semibold text-gray-900 mb-2">Plataformas inteligentes</p>
+                    <p className="font-semibold text-gray-900 mb-2">Professor como canal estratégico</p>
                     <p className="text-sm text-gray-600">
-                      Ecossistemas completos que conectam toda a jornada
+                      OpenAI, Anthropic e Google perceberam: quem treina o professor treina o aluno.
                     </p>
                   </div>
                 </div>
@@ -1149,57 +1150,57 @@ export default function App() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  titulo: "Copiloto docente integrado",
-                  desc: "IA que assiste o professor em planejamento, adaptação de conteúdo e acompanhamento, conectada ao ecossistema",
+                  titulo: "Entrar no MEC Sandbox — janela fechando",
+                  desc: "Submeter solução com foco em governança ética e escalabilidade — critérios explícitos de avaliação. Quem moldar os critérios tem vantagem no próximo PNLD.",
+                  persona: "Estratégico",
+                  destaque: true
+                },
+                {
+                  titulo: "Formação docente integrada à ferramenta",
+                  desc: "Professor aprende usando, não em curso separado. BNCC Computação obrigatória cria 79% de professores que ainda não sabem ensinar IA.",
                   persona: "Professores",
                   destaque: true
                 },
                 {
-                  titulo: "Analytics pedagógico acionável",
-                  desc: "Transformar dados em recomendações práticas para intervenção pedagógica",
-                  persona: "Gestores",
+                  titulo: "IA com dado longitudinal do aluno",
+                  desc: "Histórico real de desempenho que Google e OpenAI não têm. A vantagem competitiva dos grupos BR que ainda não está sendo usada.",
+                  persona: "Diferenciação",
                   destaque: true
                 },
                 {
-                  titulo: "Telemetria de aprendizagem",
-                  desc: "Rastrear jornada do aluno com granularidade para personalização real",
-                  persona: "Personalização",
-                  destaque: true
-                },
-                {
-                  titulo: "IA adaptativa contextual",
-                  desc: "Personalização que considera contexto escolar, não apenas performance individual",
-                  persona: "Alunos",
+                  titulo: "Método pedagógico embutido",
+                  desc: "Definir posição pedagógica clara antes que Anthropic torne o Learning Mode socrático padrão de mercado. Quem não tiver posição parecerá irresponsável.",
+                  persona: "Produto",
                   destaque: false
                 },
                 {
-                  titulo: "Governança e auditoria de IA",
-                  desc: "Dashboard de rastreabilidade, explicabilidade e supervisão de IA",
-                  persona: "Gestores",
+                  titulo: "Parceria com rede de ensino pública",
+                  desc: "Sandbox do MEC favorece soluções escaláveis e replicáveis. Entrada no público via regulação abre mercado de 40M+ alunos.",
+                  persona: "Expansão",
                   destaque: false
                 },
                 {
-                  titulo: "Recomendação inteligente de recursos",
-                  desc: "IA que sugere materiais, atividades e estratégias com base no contexto pedagógico",
+                  titulo: "Certificação docente em IA",
+                  desc: "OpenAI já lançou certificações. Grupo educacional com conteúdo curricular próprio tem credibilidade que big tech não tem para certificar professor.",
                   persona: "Professores",
                   destaque: false
                 },
                 {
-                  titulo: "Assistente de eficiência pedagógica",
-                  desc: "Automatização de tarefas operacionais para liberar tempo do professor",
+                  titulo: "Copiloto de planejamento com IA",
+                  desc: "Automatizar criação de planos de aula diferenciados para PEI (Plano Educacional Individualizado) — modelo Geekie/OpenAI já validou o conceito.",
                   persona: "Eficiência",
                   destaque: false
                 },
                 {
-                  titulo: "IA para formação docente",
-                  desc: "Copiloto para desenvolvimento profissional contínuo do professor",
-                  persona: "Professores",
+                  titulo: "Analytics prescritivo (não descritivo)",
+                  desc: "Sair de dashboard para recomendação acionável: 'Fulano precisa de reforço em fração — aqui estão 3 atividades para esta semana'.",
+                  persona: "Gestores",
                   destaque: false
                 },
                 {
-                  titulo: "Integração de jornada completa",
-                  desc: "IA que conecta diagnóstico → intervenção → acompanhamento → avaliação",
-                  persona: "Analytics",
+                  titulo: "Posicionamento no ecossistema Google",
+                  desc: "NotebookLM integrado ao Gemini é uma ameaça real para escolas Google Workspace. Integração nativa com esse ecossistema pode virar vantagem.",
+                  persona: "Parceria",
                   destaque: true
                 }
               ].map((item, idx) => (
@@ -1266,34 +1267,34 @@ export default function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  sinal: "O mercado começa a consolidar IA como infraestrutura — não apenas feature",
-                  evidencia: "Parcerias com big techs (Positivo+AWS), ecossistemas integrados (Moderna Core)",
-                  implicacao: "Features isoladas perdem valor; plataformas completas ganham"
+                  sinal: "OpenAI não está vendendo produto educacional — está fazendo geopolítica",
+                  evidencia: "Education for Countries trabalha com governos para 'personalizar aprendizagem em escala nacional'",
+                  implicacao: "A disputa mudou: não é mais assinatura de professor, é política pública. Campo de batalha diferente."
                 },
                 {
-                  sinal: "A competição migra de funcionalidades isoladas para ecossistemas completos",
-                  evidencia: "Todos os players principais anunciaram 'plataformas integradas' nas últimas semanas",
-                  implicacao: "Interoperabilidade e integração tornam-se críticas"
+                  sinal: "Anthropic apostou no único diferencial que nenhuma big tech copia facilmente",
+                  evidencia: "Learning Mode socrático — responde à crítica pedagógica central com método, não tecnologia",
+                  implicacao: "Quem não tiver posição pedagógica definida vai parecer irresponsável quando isso virar padrão"
                 },
                 {
-                  sinal: "Governança e rastreabilidade começam a ganhar peso competitivo",
-                  evidencia: "Regulamentação CNE + MEC, menções explícitas de players sobre 'IA responsável'",
-                  implicacao: "Compliance deixa de ser barreira e vira diferencial"
+                  sinal: "BNCC Computação obrigatória é o maior catalisador de demanda que o EdTech BR já viu",
+                  evidencia: "2026: IA passa de opcional para curricular em todas as escolas — 84% dos alunos já usam",
+                  implicacao: "Vender 'produto que cumpre BNCC' vira commodity em 18 meses. A vantagem é integrar IA ao desenvolvimento docente."
                 },
                 {
-                  sinal: "Analytics educacional passa a ser parte central da proposta de valor",
-                  evidencia: "Plurall 2026 focado em 'dados virando ação', menções constantes de 'inteligência pedagógica'",
-                  implicacao: "IA descritiva (dashboards) perde para IA prescritiva (recomendações)"
+                  sinal: "O MEC Sandbox sinaliza que o governo quer ser agente, não regulador passivo",
+                  evidencia: "Sandbox com critérios de inovação, escalabilidade e governança — moldando o próximo PNLD",
+                  implicacao: "Para players privados: quem entrar molda o padrão; quem não entrar se submete a ele."
                 },
                 {
-                  sinal: "Consolidação via M&A indica maturidade do setor",
-                  evidencia: "Árvore adquire Typper, movimentos de concentração",
-                  implicacao: "Players menores precisam escolher: nicho ou parceria"
+                  sinal: "Grupos brasileiros têm a vantagem que nenhuma big tech consegue replicar",
+                  evidencia: "Conteúdo curricular proprietário + dado longitudinal de alunos brasileiros",
+                  implicacao: "A janela existe enquanto Google e OpenAI não constroem parcerias locais. Está se fechando."
                 },
                 {
-                  sinal: "Copilotos educacionais emergem como padrão de mercado",
-                  evidencia: "Benchmarks internacionais (Khan, OpenAI, Anthropic) convergem nessa direção",
-                  implicacao: "IA que substitui vs IA que amplifica — vitória da segunda"
+                  sinal: "A corrida agora é pelo professor, não pelo aluno",
+                  evidenca: "OpenAI, Anthropic, Microsoft e agora sindicatos de professores: todos apostam no docente como canal",
+                  implicacao: "Plataforma que treinar o professor com a própria ferramenta cria retenção que nenhum contrato garante"
                 }
               ].map((item, idx) => (
                 <motion.div
@@ -1445,7 +1446,7 @@ export default function App() {
             <div className="pt-6 border-t border-white/15 space-y-1.5">
               <p className="text-white/60 text-sm">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
               <p className="text-white/50 text-sm">Hub de IA — Iônica &amp; FTD Com Você</p>
-              <p className="text-white/30 text-xs mt-2">Maio de 2026</p>
+              <p className="text-white/30 text-xs mt-2">Junho de 2026</p>
             </div>
           </motion.div>
         </div>
