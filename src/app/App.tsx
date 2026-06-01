@@ -624,29 +624,29 @@ export default function App() {
             <div className="space-y-4">
               {[
                 {
-                  movimento: "Consolidação regulatória (CNE + MEC)",
-                  impacto: "IA institucionalizada como parte da operação escolar",
-                  produto: "Governança, rastreabilidade e transparência tornam-se diferenciais competitivos"
+                  movimento: "CNE aprova semáforo de riscos para IA (mai/2026)",
+                  impacto: "Compliance vira requisito de entrada — não diferencial opcional",
+                  produto: "Produtos sem governança auditável perdem acesso ao mercado público regulado"
                 },
                 {
-                  movimento: "Players estruturando ecossistemas completos (Moderna Core, Positivo+AWS)",
-                  impacto: "Competição migra de features isoladas para jornadas integradas",
-                  produto: "Plataformas precisam conectar conteúdo + analytics + IA + acompanhamento"
+                  movimento: "BNDES injeta R$ 300M na Positivo para IA + plataforma MARIA com GPT",
+                  impacto: "Capital institucional valida o setor — modelo replicável por outros grupos",
+                  produto: "Vertical integrada (hardware + software + IA própria) cria vantagem estrutural"
                 },
                 {
-                  movimento: "Analytics operacional ganhando força (Plurall 2026)",
-                  impacto: "Dados passam de dashboard para ação pedagógica",
-                  produto: "IA deve transformar insights em recomendações acionáveis"
+                  movimento: "Moderna relança Aprova Brasil com IA para 800k alunos e SAEB (mai/2026)",
+                  impacto: "Defesa de base instalada com upgrade tecnológico — produto com 15 anos ganha nova vida",
+                  produto: "Integrar conteúdo + avaliação SAEB + IA + analytics num único produto é o novo benchmark público"
                 },
                 {
-                  movimento: "Consolidação via M&A (Árvore adquire Typper)",
-                  impacto: "Mercado começa fase de concentração e fortalecimento de ecossistemas",
-                  produto: "Integração e interoperabilidade tornam-se críticas"
+                  movimento: "Google + UNICEF entram no mercado público BR com Gemini e NotebookLM (mai/2026)",
+                  impacto: "Big tech contorna ausência de conteúdo BR via parceria institucional multilateral",
+                  produto: "Resposta não é produto melhor — é relacionamento mais profundo com redes e secretarias"
                 },
                 {
-                  movimento: "Big techs entrando no setor (AWS + Positivo)",
-                  impacto: "Infraestrutura enterprise e IA generativa em escala",
-                  produto: "Necessidade de maturidade técnica e arquitetura robusta"
+                  movimento: "Plurall IA: 26 mil PEIs gerados, 2 mil escolas ativas em 3 meses",
+                  impacto: "Primeira prova de escala real de IA no ensino formal brasileiro",
+                  produto: "PEI automatizado deixou de ser hipótese — é demanda comprovada e mercado aberto"
                 }
               ].map((item, idx) => (
                 <motion.div
