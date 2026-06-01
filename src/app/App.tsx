@@ -1447,24 +1447,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Player de Vídeo — Iônica */}
-      <section className="bg-gray-950 py-16 px-6">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-900/50 rounded-full mb-5">
-            <Globe className="w-3 h-3 text-purple-300" />
-            <span className="text-xs text-purple-300 font-medium uppercase tracking-widest">iônIA</span>
-          </div>
-          <h3 className="text-white text-2xl font-bold mb-2">Conheça a iônIA</h3>
-          <p className="text-gray-400 text-sm mb-8">A robozinha de IA da Iônica</p>
-          <div className="rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/30 border border-white/10">
-            <video controls className="w-full" preload="metadata">
-              <source src={new URL('../imports/ionia-video.mp4', import.meta.url).href} type="video/mp4" />
-              Seu navegador não suporta vídeo HTML5.
-            </video>
-          </div>
-        </div>
-      </section>
-
       {/* Footer/Rodapé */}
       <footer className="py-16 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-6xl mx-auto text-center">
