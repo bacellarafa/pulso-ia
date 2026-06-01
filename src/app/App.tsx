@@ -618,7 +618,7 @@ export default function App() {
             </div>
 
             <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-12">
-              Principais <span className="text-[#6B46C1]">Implicações</span>
+              O que mudou em <span className="text-[#6B46C1]">Maio/Junho 2026</span>
             </h2>
 
             <div className="space-y-4">
