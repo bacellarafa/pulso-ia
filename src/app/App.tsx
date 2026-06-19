@@ -978,7 +978,7 @@ export default function App() {
             <div className="hidden sm:flex items-center gap-4">
               <div className="flex flex-col items-end leading-none">
                 <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Edição #07</span>
-                <span className="text-[10px] text-gray-400 font-medium mt-0.5">19 Jun – 03 Jul 2026</span>
+                <span className="text-[10px] text-gray-400 font-medium mt-0.5">08 – 19 Jun 2026</span>
               </div>
               <div className="w-px h-6 bg-gray-200" />
               <img src={logoIonica} alt="Iônica" className="h-5 w-auto" style={{ filter: 'grayscale(100%) opacity(0.45)' }} />
@@ -998,7 +998,6 @@ export default function App() {
               { id: 'analise', label: 'Análise' },
               { id: 'hype', label: 'Hype' },
               { id: 'oportunidades', label: 'Oportunidades' },
-              { id: 'sinais', label: 'Sinais' },
               { id: 'edicoes', label: 'Arquivo' },
             ].map(item => (
               <button
@@ -1042,7 +1041,7 @@ export default function App() {
 
             <div className="max-w-4xl mx-auto mb-12">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Em junho de 2026, o Google anunciou simulados gratuitos do ENEM diretamente no app Gemini, desenvolvidos com a Akira Enem. Enquanto isso, o CNE abriu consulta pública até 14 de junho e a Moderna Plus avançou com material para o PNLD 2026 no Ensino Médio. O campo de batalha migrou do produto para o <strong className="text-[#6B46C1]">canal de distribuição</strong> — e o Gemini encontrou o atalho mais curto para 10 milhões de vestibulandos.
+                Em junho de 2026, o Google anunciou simulados gratuitos do ENEM diretamente no app Gemini, desenvolvidos com a Akira Enem. Enquanto isso, o CNE encerrou consulta pública sobre diretrizes de IA na educação. O campo de batalha migrou do produto para o <strong className="text-[#6B46C1]">canal de distribuição</strong> — e o Gemini encontrou o atalho mais curto para 10 milhões de vestibulandos.
               </p>
 
               <div className="bg-white p-8 rounded-2xl border-2 border-purple-100 shadow-sm">
@@ -1069,7 +1068,7 @@ export default function App() {
                       <BookOpen className="w-5 h-5 text-[#6B46C1]" />
                     </div>
                     <p className="text-sm text-gray-600">
-                      <strong>PNLD 2026 em disputa:</strong> Moderna Plus Educação Digital lançada para Ensino Médio — corrida por materiais aprovados começa a definir quem ocupa o currículo
+                      <strong>Regulação em fase final:</strong> CNE encerrou consulta pública sobre IA na Educação — diretrizes concretas estão prestes a virar exigência de mercado para quem vende para o setor público
                     </p>
                   </div>
                 </div>
@@ -1271,11 +1270,11 @@ export default function App() {
                 <tbody className="divide-y divide-gray-100">
                   {[
                     { player: "Google", movimento: "Simulados gratuitos ENEM no Gemini + Gemini Summit para professores", estrategia: "Canal direto ao aluno e ao professor — ecossistema fecha pelo uso gratuito antes de qualquer contrato", maturidade: "Alta", impacto: "Alto" },
-                    { player: "Moderna / Santillana", movimento: "Moderna Plus PNLD 2026 + Aprova Brasil com IA para 800k alunos", estrategia: "Lock-in via currículo aprovado + base instalada com upgrade tecnológico", maturidade: "Média-Alta", impacto: "Alto" },
+                    { player: "SAS / Aprova Brasil", movimento: "Aprova Brasil com IA para 800k alunos do ensino público — plataforma adaptativa integrada ao currículo", estrategia: "Escala pública como prova de conceito para venda ao privado — dado de 800k alunos reais é ativo insubstituível", maturidade: "Média-Alta", impacto: "Alto" },
                     { player: "Geekie (Arco)", movimento: "Caderno Estudo Inteligente + Ultravisão da Coordenação + OpenAI Teacher Assistant", estrategia: "Ecossistema híbrido (impresso + digital + analytics) que atende school reality, não school ideal", maturidade: "Alta", impacto: "Alto" },
                     { player: "Plurall / Somos", movimento: "26 mil PEIs gerados + funcionalidade de predição IA prevista", estrategia: "Walled garden: IA treinada com conteúdo proprietário + dado de desempenho real", maturidade: "Média-Alta", impacto: "Alto" },
                     { player: "Positivo", movimento: "MARIA (assistente IA) + R$ 300M BNDES + expansão B2B escolas", estrategia: "Vertical integrada: hardware + software + IA própria = custo total de propriedade menor", maturidade: "Média", impacto: "Médio-Alto" },
-                    { player: "MEC / Gov Federal", movimento: "MEC Idiomas com IA + PNLD 2026 + consulta CNE + BNCC Computação", estrategia: "Estado como agente de distribuição gratuita — pressiona player privado a diferenciar por profundidade", maturidade: "Baixa-Média", impacto: "Alto" },
+                    { player: "MEC / Gov Federal", movimento: "MEC Idiomas gratuito com IA (212k usuários) + diretrizes CNE em fase final + BNCC Computação", estrategia: "Estado como agente de distribuição gratuita — pressiona player privado a diferenciar por profundidade e personalização", maturidade: "Baixa-Média", impacto: "Alto" },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-white hover:bg-purple-50/30 transition-colors' : 'bg-purple-50/20 hover:bg-purple-50/40 transition-colors'}>
                       <td className="px-5 py-4 font-semibold text-gray-900 whitespace-nowrap">{row.player}</td>
@@ -1542,190 +1541,105 @@ export default function App() {
             </h2>
             <p className="text-gray-500 mb-4">Oportunidades identificadas com base nos sinais desta quinzena</p>
 
-            {/* Legenda */}
-            <div className="flex items-center gap-2 mb-10">
-              <div className="w-5 h-5 rounded bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E]" />
-              <span className="text-sm text-gray-600"><strong className="text-[#6B46C1]">Roxo</strong> = oportunidade prioritária desta quinzena — sinal mais forte, janela mais estreita</span>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  titulo: "Simulado adaptativo com histórico longitudinal do aluno",
-                  desc: "Gemini entregou simulado genérico — mas não tem o histórico de 3 anos do aluno na plataforma. Produto que combina banco ENEM + histórico real + diagnóstico personalizado por escola tem diferencial que big tech não pode copiar.",
-                  persona: "Preparatório",
-                  destaque: true
-                },
-                {
-                  titulo: "Participação na consulta CNE — posicionamento regulatório",
-                  desc: "A consulta pública do CNE encerrou em 14/jun. Quem contribuiu tem argumento técnico de alinhamento. Para próximas consultas: monitorar e participar é vantagem comercial, não burocracia.",
-                  persona: "Estratégico",
-                  destaque: true
-                },
-                {
-                  titulo: "Formação docente integrada ao uso da ferramenta",
-                  desc: "Google Summit forma professor para usar Gemini gratuitamente. Resposta: produto que ensina o professor a usar sua plataforma enquanto ele a usa tem retenção que curso externo não tem.",
-                  persona: "Professores",
-                  destaque: false
-                },
-                {
-                  titulo: "Material híbrido (impresso + IA) para escolas com conectividade fragmentada",
-                  desc: "Geekie e Moderna mostraram que material impresso com QR code ligado à plataforma funciona onde produto 100% digital falha. Escola BR é híbrida — produto que ignora isso perde mercado.",
-                  persona: "Inclusão",
-                  destaque: false
-                },
-                {
-                  titulo: "Analytics para coordenador pedagógico com dado de turma",
-                  desc: "Geekie lançou Ultravisão da Coordenação: dado consolidado de alunos, turmas e professores para coordenadores. Comprovou demanda. Produto que entrega visão de gestão retém cliente no ecossistema.",
-                  persona: "Gestão",
-                  destaque: false
-                },
-                {
-                  titulo: "IA configurável por escola para manter autonomia pedagógica",
-                  desc: "Anthropic Learning Mode mostrou o modelo: escola que define como a IA age com seus alunos mantém identidade pedagógica. Produto com configurabilidade por instituição é argumento para mantenedores exigentes.",
-                  persona: "Pedagógico",
-                  destaque: false
-                },
-                {
-                  titulo: "Analytics para coordenador com dado real de turma e professor",
-                  desc: "Geekie validou a demanda com Ultravisão da Coordenação. Coordenador é quem renova contrato e apresenta resultado para direção. Produto que entrega visão consolidada de gestão cria retenção que ferramenta de aluno não cria.",
-                  persona: "Gestão",
-                  destaque: true
-                },
-                {
-                  titulo: "Produto de compliance auditável para CNE",
-                  desc: "CNE proibiu vigilância emocional e exigiu supervisão em correção automatizada. Produto que entrega log auditável + relatório de conformidade + trilha de supervisão humana vira requisito de entrada no mercado público.",
-                  persona: "Regulatório",
-                  destaque: false
-                },
-                {
-                  titulo: "IA para formação de idiomas com custo abaixo do MEC Idiomas",
-                  desc: "MEC Idiomas com tutor de IA criou benchmark gratuito. Diferencial privado: profundidade de personalização por perfil de escola, integração curricular e dado de progresso longitudinal que plataforma pública não tem.",
-                  persona: "Idiomas",
-                  destaque: false
-                }
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.08 }}
-                  className={`p-6 rounded-2xl border-2 transition-all ${
-                    item.destaque
-                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
-                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
-                  }`}
-                >
-                  <div className="flex items-start gap-3 mb-3">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                      item.destaque ? 'bg-white/20' : 'bg-purple-100'
-                    }`}>
-                      <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>
-                        {item.titulo}
-                      </h3>
-                      <p className={`text-sm mb-3 leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>
-                        {item.desc}
-                      </p>
-                      <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                        item.destaque ? 'bg-white/20 text-white' : 'bg-purple-100 text-[#6B46C1]'
-                      }`}>
-                        {item.persona}
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── SINAIS ESTRATÉGICOS ── */}
-      <section id="sinais" className="py-24 px-6 bg-gradient-to-br from-purple-50 via-white to-purple-50">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <img src={mascoteIA} alt="IA Curator" className="h-10 opacity-80" />
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full">
-                <Sparkles className="w-4 h-4 text-[#FF6B35]" />
-                <span className="text-sm text-[#FF6B35] font-medium">Sinais Estratégicos</span>
+            {/* Legenda prioridade */}
+            <div className="flex items-center gap-6 mb-10 flex-wrap">
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-[#6B46C1]" />
+                <span className="text-sm text-gray-600"><strong>Alta</strong> — janela estreita, agir agora</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-[#FF6B35]" />
+                <span className="text-sm text-gray-600"><strong>Média</strong> — posicionar nos próximos ciclos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-gray-300" />
+                <span className="text-sm text-gray-600"><strong>Baixa</strong> — monitorar</span>
               </div>
             </div>
-
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-12">
-              Interpretações <span className="text-[#6B46C1]">Profundas</span>
-            </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
-                  sinal: "O Google não entrou pela escola — entrou pelo ENEM",
-                  evidencia: "Simulados gratuitos no Gemini em parceria com Akira Enem — produto desenhado para o vestibulando, não para o professor",
-                  implicacao: "Canal direto ao aluno bypassa escola, secretaria e sistema de ensino. Para players BR, o diferencial deixou de ser funcionalidade e passou a ser o dado do aluno que a big tech não tem."
+                  sinal: "Gemini entrou no ENEM com simulado gratuito — mas não tem o histórico do aluno",
+                  oportunidade: "Simulado adaptativo com histórico longitudinal",
+                  impacto: "Big tech tem alcance. Plataforma que combina banco ENEM + histórico real de 3+ anos + diagnóstico por escola tem diferencial que Google não consegue copiar. O dado do aluno é o ativo.",
+                  prioridade: "Alta",
+                  cor: "border-[#6B46C1]",
+                  corBadge: "bg-[#6B46C1] text-white",
+                  area: "Preparatório / Iônica"
                 },
                 {
-                  sinal: "Gratuidade virou estratégia de distribuição, não de sustentabilidade",
-                  evidencia: "Google Summit gratuito, MEC Idiomas gratuito, Khan Academy gratuito até jun/2027 — todos usam zero cost como canal de adoção",
-                  implicacao: "Player que não tiver versão gratuita com dado real de uso vai perder a corrida de distribuição antes de conseguir monetizar. Freemium não é estratégia de produto — é estratégia de mercado."
+                  sinal: "CNE finalizou diretrizes: compliance virou requisito de entrada no mercado público",
+                  oportunidade: "Produto de IA auditável e alinhado ao CNE",
+                  impacto: "Proibição de vigilância emocional e supervisão humana obrigatória em correção automatizada viram critério de licitação. Quem chegar adequado primeiro tem argumento técnico que rivais não têm.",
+                  prioridade: "Alta",
+                  cor: "border-[#6B46C1]",
+                  corBadge: "bg-[#6B46C1] text-white",
+                  area: "B2G / Estratégico"
                 },
                 {
-                  sinal: "PNLD digital é o maior canal de distribuição sem custo do país",
-                  evidencia: "Moderna Plus para Ensino Médio: aprovação pelo PNLD = 8M de alunos com material garantido sem custo de aquisição",
-                  implicacao: "Para players com capacidade editorial, a equação é clara: investir no processo PNLD tem ROI de distribuição que nenhuma campanha de marketing consegue igualar. Mas exige 3–4 anos de ciclo."
+                  sinal: "Google formou professores de graça — e criou lock-in de adoção via Gemini",
+                  oportunidade: "Formação docente integrada ao uso da própria plataforma",
+                  impacto: "Professor formado pelo Google usa Gemini. Resposta: formação que acontece dentro da ferramenta, não fora. Produto que ensina o professor enquanto ele usa tem retenção que curso externo não tem.",
+                  prioridade: "Alta",
+                  cor: "border-[#6B46C1]",
+                  corBadge: "bg-[#6B46C1] text-white",
+                  area: "Professores / Iônica"
                 },
                 {
-                  sinal: "Compliance regulatório virou argumento comercial B2G",
-                  evidencia: "CNE classificou riscos, proibiu vigilância emocional, exigiu supervisão humana — diretrizes concretas, não orientações",
-                  implicacao: "Produto que demonstra conformidade com as diretrizes CNE tem argumento direto para contratos com secretarias de educação. Quem não adequar vai perder licitações — não por preço, por requisito."
+                  sinal: "Geekie lançou Ultravisão da Coordenação — coordenador como buyer estratégico",
+                  oportunidade: "Analytics prescritivo para coordenador pedagógico",
+                  impacto: "Coordenador renova contrato, apresenta resultado para direção e influencia compra do próximo ciclo. Produto que entrega visão consolidada de turma e professor cria retenção que ferramenta de aluno não cria.",
+                  prioridade: "Média",
+                  cor: "border-[#FF6B35]",
+                  corBadge: "bg-[#FF6B35] text-white",
+                  area: "Gestão / Iônica"
                 },
                 {
-                  sinal: "Geekie mostrou que o coordenador é o buyer menos explorado do setor",
-                  evidencia: "Ultravisão da Coordenação: tela específica para coordenador pedagógico com dados consolidados de turma",
-                  implicacao: "O mercado EdTech foca em professor e aluno. Coordenador é quem renova contrato, apresenta resultado para direção e influencia a compra do próximo ciclo. Produto que serve ao coordenador cria retenção diferente."
+                  sinal: "Anthropic Learning Mode: escola configura como a IA se comporta com seus alunos",
+                  oportunidade: "IA configurável por escola — identidade pedagógica preservada",
+                  impacto: "ChatGPT e Gemini são iguais para todas as escolas. Produto que permite à escola definir tom, abordagem e limites da IA mantém a autonomia pedagógica da instituição. Argumento forte para mantenedores exigentes.",
+                  prioridade: "Média",
+                  cor: "border-[#FF6B35]",
+                  corBadge: "bg-[#FF6B35] text-white",
+                  area: "Pedagógico / Dados"
                 },
                 {
-                  sinal: "Configurabilidade pedagógica é o próximo diferencial de produto",
-                  evidencia: "Anthropic Learning Mode: escola configura como a IA responde aos alunos. Geekie: coordenador configura visão de dados. MEC Idiomas: tutor configurado por nível",
-                  implicacao: "O produto genérico perdeu. Quem vence é quem permite que a instituição imprima sua identidade pedagógica no produto. Customização não é feature — é posicionamento."
-                }
+                  sinal: "MEC Idiomas atingiu 212k usuários em dias com tutor de IA gratuito",
+                  oportunidade: "Plataforma de idiomas com personalização profunda por perfil de escola",
+                  impacto: "Acesso gratuito virou commodity. Diferencial privado: personalização por histórico do aluno, integração com currículo da escola e dado longitudinal de progresso — o que plataforma pública não entrega.",
+                  prioridade: "Baixa",
+                  cor: "border-gray-200",
+                  corBadge: "bg-gray-200 text-gray-700",
+                  area: "Idiomas / Alunos"
+                },
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                  transition={{ delay: idx * 0.08 }}
+                  className={`bg-white rounded-2xl border-2 ${item.cor} p-6 hover:shadow-md transition-all`}
                 >
-                  <div className="flex items-start gap-3 mb-4">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Brain className="w-4 h-4 text-white" />
-                    </div>
-                    <h3 className="font-bold text-gray-900 leading-snug">{item.sinal}</h3>
+                  <div className="flex items-start justify-between mb-3">
+                    <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${item.corBadge}`}>
+                      {item.prioridade}
+                    </span>
+                    <span className="text-xs text-gray-400 font-medium">{item.area}</span>
                   </div>
-                  <div className="bg-purple-50/60 rounded-xl p-4 mb-3">
-                    <p className="text-xs font-semibold text-purple-600 mb-1">Evidência</p>
-                    <p className="text-sm text-gray-600 leading-relaxed">{item.evidencia}</p>
-                  </div>
-                  <div className="bg-orange-50/60 rounded-xl p-4">
-                    <p className="text-xs font-semibold text-orange-600 mb-1">Implicação</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">{item.implicacao}</p>
-                  </div>
+                  <p className="text-xs text-gray-400 mb-1 uppercase tracking-wide font-medium">Sinal observado</p>
+                  <p className="text-sm text-gray-500 mb-3 italic leading-relaxed">{item.sinal}</p>
+                  <h3 className="font-bold text-gray-900 mb-2 text-base leading-snug">{item.oportunidade}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.impacto}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
       </section>
+
+
 
       {/* ── EDIÇÕES ANTERIORES ── */}
       <section id="edicoes" className="py-24 px-6 bg-white">
