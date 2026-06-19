@@ -1173,7 +1173,7 @@ export default function App() {
                   color: "from-purple-700 to-purple-800"
                 },
                 {
-                  titulo: "Google Gemini Summit 2026: formação gratuita de professores brasileiros em IA",
+                  titulo: "Google Gemini Summit 2026: como o Google formou professores BR em IA — de graça",
                   empresa: "Google Education",
                   data: "Mai–Jun/2026",
                   resumo: "Evento gratuito de três semanas formou professores, gestores e lideranças educacionais brasileiras em uso do Gemini — planos de aula aumentados, alinhamento com BNCC e uso ético de IA. Estratégia de lock-in via formação docente, não via contrato.",
