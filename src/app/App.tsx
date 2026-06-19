@@ -962,11 +962,11 @@ export default function App() {
       <header className="fixed top-0 left-0 right-0 bg-white/96 backdrop-blur-md z-50 border-b border-gray-100/80 shadow-sm">
         <div className="max-w-7xl mx-auto px-5 md:px-8">
 
-          {/* Linha única — 3 colunas: identidade | nav centralizada | direita */}
-          <div className="flex items-center h-14 md:h-16 gap-4">
+          {/* Linha 1 — identidade + direita */}
+          <div className="flex items-center justify-between h-12 md:h-14">
 
             {/* Identidade — mascote + nome */}
-            <div className="flex items-center gap-3 flex-shrink-0">
+            <div className="flex items-center gap-3">
               <img src={mascoteIA} alt="PULSO" className="h-10 md:h-11 w-auto flex-shrink-0" />
               <div className="flex flex-col justify-center leading-none">
                 <span className="text-sm md:text-base font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>PULSO</span>
@@ -974,8 +974,21 @@ export default function App() {
               </div>
             </div>
 
-            {/* Nav centralizada — cresce para preencher o espaço */}
-            <nav className="flex-1 flex items-center justify-center gap-0.5 overflow-x-auto scrollbar-hide">
+            {/* Direita — edição + logos parceiros */}
+            <div className="hidden sm:flex items-center gap-4">
+              <div className="flex flex-col items-end leading-none">
+                <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Julho 2026</span>
+                <span className="text-[10px] text-gray-400 font-medium mt-0.5">Edição atual</span>
+              </div>
+              <div className="w-px h-6 bg-gray-200" />
+              <img src={logoIonica} alt="Iônica" className="h-5 w-auto" style={{ filter: 'grayscale(100%) opacity(0.45)' }} />
+              <div className="w-px h-4 bg-gray-200" />
+              <img src={logoFTD} alt="FTD Com Você" className="h-4 w-auto" style={{ filter: 'grayscale(100%) opacity(0.40)' }} />
+            </div>
+          </div>
+
+          {/* Linha 2 — nav centralizada com respiro */}
+          <nav className="flex items-center justify-center gap-1 pb-2">
             {[
               { id: 'insight', label: 'Insight' },
               { id: 'resumo', label: 'Resumo' },
@@ -1001,31 +1014,8 @@ export default function App() {
                 {item.label}
               </button>
             ))}
-            </nav>
+          </nav>
 
-            {/* Direita — edição + logos parceiros */}
-            <div className="hidden sm:flex items-center gap-4 flex-shrink-0">
-              <div className="flex flex-col items-end leading-none">
-                <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Julho 2026</span>
-                <span className="text-[10px] text-gray-400 font-medium mt-0.5">Edição atual</span>
-              </div>
-              <div className="w-px h-6 bg-gray-200" />
-              <img
-                src={logoIonica}
-                alt="Iônica"
-                className="h-5 w-auto"
-                style={{ filter: 'grayscale(100%) opacity(0.45)' }}
-              />
-              <div className="w-px h-4 bg-gray-200" />
-              <img
-                src={logoFTD}
-                alt="FTD Com Você"
-                className="h-4 w-auto"
-                style={{ filter: 'grayscale(100%) opacity(0.40)' }}
-              />
-            </div>
-
-          </div>
         </div>
       </header>
 
