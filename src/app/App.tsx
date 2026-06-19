@@ -52,6 +52,7 @@ function EdicaoAbril2026({
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Mini header */}
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -66,173 +67,222 @@ function EdicaoAbril2026({
               onClick={onBackToEdicoes}
               className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
             >
-              <BookOpen className="w-4 h-4" />
-              Edições Anteriores
+              <Library className="w-4 h-4" />
+              Edições anteriores
             </button>
             <button
               onClick={onBack}
-              className="flex items-center gap-2 px-4 py-2 bg-[#6B46C1] text-white rounded-lg hover:bg-[#5B3A9E] transition-colors text-sm font-medium"
+              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Edição Atual
+              Edição atual
             </button>
           </div>
         </div>
       </header>
 
+      {/* Hero */}
       <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-            <Sparkles className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-sm text-[#6B46C1] font-medium">Insight da Quinzena — Abril 2026</span>
-          </div>
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            O MEC abre sandbox de IA para educação básica:<br />
-            <span className="text-[#6B46C1]">quem molda os critérios, molda o próximo PNLD</span>
-          </h1>
-          <p className="text-xl text-gray-600 leading-relaxed">
-            O Ministério da Educação abriu um ambiente de experimentação controlado para soluções de IA, avaliando por inovação, escalabilidade e governança ética — sinalizando os critérios que guiarão contratos públicos.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-            <FileText className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
-          </div>
-          <div className="space-y-4">
-            {[
-              { movimento: "MEC abre sandbox regulatório para IA na educação básica", impacto: "Players que participam ganham vantagem direta no PNLD futuro e contratos públicos", produto: "Critérios: inovação + escalabilidade + governança ética — requisitos de entrada, não diferenciais" },
-              { movimento: "CNE forma comissão especial para diretrizes de IA (básica e superior)", impacto: "Regulação virá no 2º semestre de 2026 — janela de 6 meses para adequação", produto: "Empresas sem governança auditável terão barreira de entrada no mercado público" },
-              { movimento: "BNCC Computação torna IA curricular em todas as escolas em 2026", impacto: "Demanda estrutural criada por lei — não depende de adoção voluntária", produto: "Janela de 12–18 meses antes de commodity. Diferencial: formação docente integrada" },
-              { movimento: "Arco/Geekie consolida Teacher Assistant com OpenAI", impacto: "Primeiro player BR com IA generativa integrada ao fluxo pedagógico", produto: "Cria pressão sobre concorrentes — Plurall/SOMOS precisam acelerar integração" },
-              { movimento: "MEC lança curso 'IA na prática docente' e plataforma MEC Idiomas com tutor IA", impacto: "Estado forma professores para IA antes que o mercado o faça", produto: "Cria expectativa docente que plataformas privadas precisam igualar ou superar" },
-            ].map((item, i) => (
-              <div key={i} className={`bg-white p-6 rounded-xl border-l-4 ${ i === 0 ? 'border-[#6B46C1]' : i === 1 ? 'border-[#FF6B35]' : 'border-purple-300'} shadow-sm hover:shadow-md transition-shadow`}>
-                <p className="font-bold text-gray-900 mb-2">{item.movimento}</p>
-                <p className="text-sm text-gray-600 mb-1"><span className="font-semibold text-[#6B46C1]">Impacto:</span> {item.impacto}</p>
-                <p className="text-sm text-gray-500"><span className="font-semibold">Para produto:</span> {item.produto}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-6 bg-purple-50/30">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-            <Zap className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
-          </div>
-          <div className="grid gap-5">
-            {[
-              { titulo: "MEC Sandbox de IA: ambiente regulatório aberto", empresa: "MEC / Governo Federal", data: "Março–Abril 2026", resumo: "O Ministério da Educação abriu inscrições para sandbox regulatório avaliando soluções de IA por inovação, escalabilidade e governança ética. Publicação do documento orientador 'IA na Educação Básica'.", impacto: "Empresas que participarem moldam os critérios que valerão nos próximos ciclos do PNLD. É uma janela que se fecha em 12–18 meses.", color: "from-purple-600 to-purple-700" },
-              { titulo: "BNCC Computação: IA obrigatória em todas as escolas em 2026", empresa: "CNE / Redes de Ensino", data: "2026", resumo: "A partir de 2026, a BNCC Computação passa a ser obrigatória em todas as escolas brasileiras, tornando o trabalho com IA parte estruturada do currículo.", impacto: "Janela de 12–18 meses para sistemas de ensino sem solução de IA curricular. Quem chegar primeiro com formação + ferramenta integradas captura o mercado.", color: "from-purple-700 to-purple-800" },
-              { titulo: "Arco/Geekie + OpenAI: Teacher Assistant em expansão", empresa: "Arco Educação / Geekie", data: "Abril 2026", resumo: "A Arco Educação reporta avanços na parceria com OpenAI anunciada em 2024. O Teacher Assistant, que gera planos pedagógicos personalizados para alunos com deficiência, está em expansão.", impacto: "Primeiro grande player BR com IA generativa no fluxo pedagógico. Cria pressão sobre Plurall/SOMOS para acelerarem suas próprias integrações.", color: "from-purple-500 to-purple-600" },
-              { titulo: "MEC lança curso de IA para docentes e plataforma de idiomas com IA", empresa: "MEC", data: "Abril 2026", resumo: "Curso 'IA na prática docente' disponível na Plataforma Mais Professores. Lançamento da MEC Idiomas com tutor de IA que corrige pronúncia e permite prática de conversação.", impacto: "Estado formando professores para IA cria expectativa docente que plataformas privadas precisarão igualar ou superar.", color: "from-purple-600 to-violet-600" },
-            ].map((m, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                <div className={`h-1.5 bg-gradient-to-r ${m.color}`} />
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-xs font-semibold text-purple-600 bg-purple-50 px-2 py-1 rounded-full">{m.empresa}</span>
-                    <span className="text-xs text-gray-400">{m.data}</span>
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-3">{m.titulo}</h4>
-                  <p className="text-sm text-gray-600 mb-3 leading-relaxed">{m.resumo}</p>
-                  <div className="bg-purple-50 rounded-lg p-3">
-                    <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
-                    <p className="text-xs text-gray-700 leading-relaxed">{m.impacto}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <img src={mascote} alt="iônIA" className="h-14 w-auto opacity-90" />
-            <div>
-              <p className="text-purple-200 text-xs font-semibold uppercase tracking-widest mb-1">Implicação Estratégica</p>
-              <h3 className="text-2xl font-bold">O que isso significa para produto</h3>
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+              <Calendar className="w-3 h-3" />
+              Abril de 2026
             </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { titulo: "Sandbox como atalho estratégico", desc: "Participar do sandbox do MEC não é burocracia — é posicionamento. Quem moldou os critérios terá vantagem natural nos contratos públicos que virão em 2026/2027." },
-              { titulo: "Formação docente como moat", desc: "BNCC Computação obrigatória cria demanda estrutural. O produto que treina o professor enquanto ele usa — não em curso separado — tem retenção que nenhum contrato garante." },
-              { titulo: "Governança como requisito de entrada", desc: "O documento orientador do MEC e as diretrizes do CNE estão sinalizando que compliance de IA vai virar pré-requisito, não diferencial, para contratos públicos." },
-              { titulo: "Janela fechando para players BR", desc: "Arco/Geekie tem vantagem hoje. Concorrentes têm 12–18 meses para desenvolver integração comparável antes que a vantagem se solidifique em churn muito baixo." },
-            ].map((item, i) => (
-              <div key={i} className="bg-white/10 rounded-xl p-5 border border-white/20">
-                <h4 className="font-bold text-white mb-2">{item.titulo}</h4>
-                <p className="text-purple-100 text-sm leading-relaxed">{item.desc}</p>
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
-            ))}
-          </div>
+            </div>
+            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+              O MEC abre sandbox de IA para educação básica:<br />
+              <span className="text-[#6B46C1]">quem molda os critérios, molda o próximo PNLD</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              O Ministério da Educação abriu um ambiente de experimentação controlado para soluções de IA, avaliando por inovação, escalabilidade e governança ética — sinalizando os critérios que guiarão contratos públicos.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      <section className="py-16 px-6 bg-purple-50/30">
+      {/* Resumo executivo */}
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-            <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
-          </div>
-          <div className="grid md:grid-cols-2 gap-5">
-            {[
-              { titulo: "Entrar no MEC Sandbox — janela fechando", desc: "Submeter solução com foco em governança ética e escalabilidade. Critérios explícitos: inovação + escalabilidade + governança. Posicionamento privilegiado em contratos públicos e PNLD futuros.", destaque: true },
-              { titulo: "Formação docente integrada à ferramenta", desc: "BNCC Computação obrigatória em 2026 cria demanda estrutural. Produto que ensina o professor enquanto ele usa — não em curso separado — tem adoção comprovada e retenção alta.", destaque: true },
-              { titulo: "IA com dado longitudinal do aluno", desc: "Ferramentas genéricas não têm histórico. As soluções dos grupos educacionais têm — mas não estão usando. Conectar IA ao histórico real cria diferenciação que nenhuma big tech consegue replicar.", destaque: false },
-              { titulo: "Governança auditável para compliance CNE", desc: "CNE publicará diretrizes no 2º semestre de 2026. Produto que entrega rastreabilidade + log auditável + relatório para gestor vira requisito de entrada no mercado público regulado.", destaque: false },
-            ].map((item, i) => (
-              <div key={i} className={`p-6 rounded-2xl border-2 transition-all ${item.destaque ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg' : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'}`}>
-                <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
-                  <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
-                </div>
-                <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
-                <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
-                {item.destaque && <span className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white">Prioritário</span>}
-              </div>
-            ))}
-          </div>
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              Principais <span className="text-[#6B46C1]">Implicações</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                { titulo: "MEC abre sandbox regulatório para IA na educação básica", desc: "Players que participam ganham vantagem direta no PNLD futuro e contratos públicos. Critérios: inovação + escalabilidade + governança ética — requisitos de entrada, não diferenciais.", cor: "border-[#6B46C1]" },
+                { titulo: "CNE forma comissão especial para diretrizes de IA (básica e superior)", desc: "Regulação virá no 2º semestre de 2026 — janela de 6 meses para adequação. Empresas sem governança auditável terão barreira de entrada no mercado público.", cor: "border-[#FF6B35]" },
+                { titulo: "BNCC Computação torna IA curricular em todas as escolas em 2026", desc: "Demanda estrutural criada por lei — não depende de adoção voluntária. Janela de 12–18 meses antes de commodity. Diferencial: formação docente integrada.", cor: "border-[#FF6B35]" },
+                { titulo: "Arco/Geekie consolida Teacher Assistant com OpenAI", desc: "Primeiro player BR com IA generativa integrada ao fluxo pedagógico. Cria pressão sobre concorrentes — Plurall/SOMOS precisam acelerar integração.", cor: "border-[#6B46C1]" },
+                { titulo: "MEC lança curso 'IA na prática docente' e plataforma MEC Idiomas com tutor IA", desc: "Estado forma professores para IA antes que o mercado o faça. Cria expectativa docente que plataformas privadas precisam igualar ou superar.", cor: "border-[#6B46C1]" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
+                >
+                  <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
+      {/* Principais movimentos */}
+      <section className="py-20 px-6 bg-purple-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              Movimentos <span className="text-[#6B46C1]">de Abril</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-5">
+              {[
+                { num: "01", titulo: "MEC Sandbox de IA: ambiente regulatório aberto", desc: "O Ministério da Educação abriu inscrições para sandbox regulatório avaliando soluções de IA por inovação, escalabilidade e governança ética. Publicação do documento orientador 'IA na Educação Básica'.", impacto: "Empresas que participarem moldam os critérios que valerão nos próximos ciclos do PNLD. É uma janela que se fecha em 12–18 meses.", cor: "from-purple-600 to-purple-700" },
+                { num: "02", titulo: "BNCC Computação: IA obrigatória em todas as escolas em 2026", desc: "A partir de 2026, a BNCC Computação passa a ser obrigatória em todas as escolas brasileiras, tornando o trabalho com IA parte estruturada do currículo.", impacto: "Janela de 12–18 meses para sistemas de ensino sem solução de IA curricular. Quem chegar primeiro com formação + ferramenta integradas captura o mercado.", cor: "from-purple-700 to-purple-800" },
+                { num: "03", titulo: "Arco/Geekie + OpenAI: Teacher Assistant em expansão", desc: "A Arco Educação reporta avanços na parceria com OpenAI anunciada em 2024. O Teacher Assistant, que gera planos pedagógicos personalizados para alunos com deficiência, está em expansão.", impacto: "Primeiro grande player BR com IA generativa no fluxo pedagógico. Cria pressão sobre Plurall/SOMOS para acelerarem suas próprias integrações.", cor: "from-purple-500 to-purple-600" },
+                { num: "04", titulo: "MEC lança curso de IA para docentes e plataforma de idiomas com IA", desc: "Curso 'IA na prática docente' disponível na Plataforma Mais Professores. Lançamento da MEC Idiomas com tutor de IA que corrige pronúncia e permite prática de conversação.", impacto: "Estado formando professores para IA cria expectativa docente que plataformas privadas precisarão igualar ou superar.", cor: "from-purple-600 to-violet-600" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                >
+                  <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
+                    <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
+                    <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
+                  </div>
+                  <div className="px-6 py-4">
+                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <div className="bg-purple-50 rounded-lg p-3">
+                      <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
+                      <p className="text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Implicação estratégica */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            </div>
+            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+              <div className="flex items-start gap-4">
+                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <div>
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
+                    O MEC não abriu só um sandbox — abriu o processo de definição dos critérios do próximo PNLD. Quem participa agora molda as regras que valerão para todos depois.
+                  </p>
+                  <p className="text-white/70 text-sm">
+                    Governança ética, escalabilidade e inovação deixaram de ser diferenciais opcionais e viraram requisitos de entrada no mercado público de educação.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Oportunidades de produto */}
+      <section className="py-20 px-6 bg-purple-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { titulo: "Entrar no MEC Sandbox — janela fechando", desc: "Submeter solução com foco em governança ética e escalabilidade. Critérios explícitos: inovação + escalabilidade + governança. Posicionamento privilegiado em contratos públicos e PNLD futuros.", destaque: true },
+                { titulo: "Formação docente integrada à ferramenta", desc: "BNCC Computação obrigatória em 2026 cria demanda estrutural. Produto que ensina o professor enquanto ele usa — não em curso separado — tem adoção comprovada e retenção alta.", destaque: true },
+                { titulo: "IA com dado longitudinal do aluno", desc: "Ferramentas genéricas não têm histórico. As soluções dos grupos educacionais têm — mas não estão usando. Conectar IA ao histórico real cria diferenciação que nenhuma big tech consegue replicar.", destaque: false },
+                { titulo: "Governança auditável para compliance CNE", desc: "CNE publicará diretrizes no 2º semestre de 2026. Produto que entrega rastreabilidade + log auditável + relatório para gestor vira requisito de entrada no mercado público regulado.", destaque: false },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.08 }}
+                  className={`p-6 rounded-2xl border-2 transition-all ${
+                    item.destaque
+                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
+                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                  }`}
+                >
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  </div>
+                  <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
+                  <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
+                  {item.destaque && <span className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white">Prioritário</span>}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Navegação inferior */}
       <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={onBackToEdicoes}
             className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
           >
-            <BookOpen className="w-4 h-4" />
-            Todas as Edições
+            <Library className="w-4 h-4" />
+            Voltar para edições anteriores
           </button>
           <button
             onClick={onBack}
             className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
-            Edição Atual
+            Voltar para edição atual
           </button>
         </div>
       </section>
 
-      <footer className="py-10 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src={logoSmall} alt="Iônica" className="h-6 w-auto" style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }} />
-            <div>
-              <p className="text-white/80 text-sm font-semibold">Pulso IA</p>
-              <p className="text-white/50 text-xs">Radar de IA na Educação · Abril 2026</p>
-            </div>
+      {/* Footer */}
+      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <img src={mascote} alt="PULSO" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">PULSO — Radar de IA na Educação</p>
+          <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
+            <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
+            <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Abril de 2026</p>
           </div>
-          <img src={logoFtd} alt="FTD" className="h-5 w-auto" style={{ filter: "brightness(0) invert(1)", opacity: 0.55 }} />
         </div>
       </footer>
     </div>
@@ -570,6 +620,7 @@ function EdicaoJunho2026({
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Mini header */}
       <header className="sticky top-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -584,15 +635,15 @@ function EdicaoJunho2026({
               onClick={onBackToEdicoes}
               className="hidden md:flex items-center gap-1.5 px-3 py-2 text-sm text-gray-600 hover:text-[#6B46C1] hover:bg-purple-50 rounded-lg transition-all"
             >
-              <BookOpen className="w-4 h-4" />
-              Edições Anteriores
+              <Library className="w-4 h-4" />
+              Edições anteriores
             </button>
             <button
               onClick={onBack}
-              className="flex items-center gap-2 px-4 py-2 bg-[#6B46C1] text-white rounded-lg hover:bg-[#5B3A9E] transition-colors text-sm font-medium"
+              className="flex items-center gap-1.5 px-4 py-2 bg-[#6B46C1] text-white text-sm font-medium rounded-lg hover:bg-[#5B3A9E] transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Edição Atual
+              Edição atual
             </button>
           </div>
         </div>
@@ -601,168 +652,213 @@ function EdicaoJunho2026({
       {/* Hero */}
       <section className="py-20 md:py-28 px-6 bg-gradient-to-br from-white via-purple-50/40 to-white">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-            <Sparkles className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-sm text-[#6B46C1] font-medium">Insight da Quinzena — Junho 2026</span>
-          </div>
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            O Brasil chegou ao ponto de inflexão:<br />
-            <span className="text-[#6B46C1]">IA na educação virou objeto de regulação, capital e escala</span>
-          </h1>
-          <p className="text-xl text-gray-600 leading-relaxed">
-            CNE aprovou diretrizes com semáforo de riscos, BNDES injetou R$ 300M na Positivo e Plurall IA gerou 26 mil PEIs em 3 meses. O mercado não discute mais se — disputa quem chega primeiro.
-          </p>
-        </div>
-      </section>
-
-      {/* Resumo Executivo */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
-            <FileText className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
-          </div>
-          <div className="space-y-4">
-            {[
-              { movimento: "CNE aprova semáforo de riscos para IA (mai/2026)", impacto: "Compliance vira requisito de entrada — não diferencial opcional", produto: "Produtos sem governança auditável perdem acesso ao mercado público regulado", cor: "border-[#6B46C1]" },
-              { movimento: "BNDES injeta R$ 300M na Positivo para IA + plataforma MARIA com GPT", impacto: "Capital institucional valida o setor — modelo replicável por outros grupos", produto: "Vertical integrada (hardware + software + IA própria) cria vantagem estrutural", cor: "border-[#FF6B35]" },
-              { movimento: "Moderna relança Aprova Brasil com IA para 800k alunos e SAEB (mai/2026)", impacto: "Defesa de base instalada com upgrade tecnológico — produto com 15 anos ganha nova vida", produto: "Integrar conteúdo + avaliação SAEB + IA + analytics num único produto é o novo benchmark público", cor: "border-purple-300" },
-              { movimento: "Google + UNICEF entram no mercado público BR com Gemini e NotebookLM (mai/2026)", impacto: "Big tech contorna ausência de conteúdo BR via parceria institucional multilateral", produto: "Resposta não é produto melhor — é relacionamento mais profundo com redes e secretarias", cor: "border-purple-300" },
-              { movimento: "Plurall IA: 26 mil PEIs gerados, 2 mil escolas ativas em 3 meses", impacto: "Primeira prova de escala real de IA no ensino formal brasileiro", produto: "PEI automatizado deixou de ser hipótese — é demanda comprovada e mercado aberto", cor: "border-purple-300" },
-            ].map((item, i) => (
-              <div key={i} className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}>
-                <p className="font-bold text-gray-900 mb-2">{item.movimento}</p>
-                <p className="text-sm text-gray-600 mb-1"><span className="font-semibold text-[#6B46C1]">Impacto:</span> {item.impacto}</p>
-                <p className="text-sm text-gray-500"><span className="font-semibold">Para produto:</span> {item.produto}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Movimentos */}
-      <section className="py-16 px-6 bg-purple-50/30">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-            <Zap className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2">
-            {[
-              { titulo: "CNE aprova diretrizes com semáforo de riscos para IA", empresa: "CNE / MEC", data: "11 mai/2026", resumo: "CNE aprovou parecer que classifica tecnologias por risco: proibiu vigilância emocional e perfilização psicológica; exige supervisão humana em correção automatizada.", impacto: "Compliance vira requisito de entrada no mercado público. Produto sem governança auditável perde acesso a contratos regulados.", color: "from-purple-600 to-purple-700" },
-              { titulo: "BNDES injeta R$ 300M na Positivo — plataforma MARIA integra GPT", empresa: "Positivo Tecnologia / BNDES", data: "Abril–Maio 2026", resumo: "Positivo fechou financiamento de até R$ 300M com BNDES para Plano de Inovação 2026–2028, incluindo MARIA, assistente de IA que monta planos de estudo personalizados.", impacto: "Vertical integrada (hardware + software + IA própria) cria vantagem estrutural difícil de replicar por players apenas de software.", color: "from-purple-700 to-purple-800" },
-              { titulo: "Moderna relança Aprova Brasil com IA para 800k alunos", empresa: "Moderna / Santillana", data: "Bett Brasil / mai 2026", resumo: "Soluções Moderna lançou nova versão do Aprova Brasil com monitoramento em tempo real, análise de performance no SAEB e intervenção pedagógica baseada em IA.", impacto: "Produto de 15 anos ganhou nova vida com IA integrada. Benchmark: conteúdo + SAEB + analytics em plataforma única.", color: "from-purple-500 to-purple-600" },
-              { titulo: "Google + UNICEF parceria 3 anos no Brasil — Gemini e NotebookLM em escolas públicas", empresa: "Google / UNICEF", data: "Mai/2026", resumo: "Parceria trienal anuncia uso de Gemini e NotebookLM em escolas públicas brasileiras. Google.org destina R$ 5M para expandir programa Experience AI no Brasil.", impacto: "Big tech contorna ausência de conteúdo brasileiro via parceria institucional multilateral — canal de distribuição diferente dos players privados.", color: "from-purple-600 to-violet-600" },
-              { titulo: "Plurall IA: 26 mil PEIs gerados em 3 meses", empresa: "Somos / Plurall", data: "mai/2026", resumo: "Em 3 meses de uso, mais de 2 mil escolas criaram pelo menos um PEI na plataforma Plurall IA, com 26 mil conteúdos adaptados gerados. Predição por IA prevista para 2026.", impacto: "Primeira prova de escala real de IA no ensino formal brasileiro. PEI automatizado saiu de hipótese para demanda comprovada.", color: "from-purple-600 to-purple-700" },
-              { titulo: "Bett Brasil 2026: 65 mil visitantes, +40% vs 2025", empresa: "Bett Brasil", data: "mai/2026", resumo: "Maior edição da história do evento com lançamentos de Somos, Moderna, Super Professor (Leitor de Gabaritos + Diagramador), SoftBank Robotics (Léia) e relatório OCDE em português.", impacto: "Mercado saiu do discurso para o produto. Volume de lançamentos indica corrida por posicionamento antes da regulação final do CNE.", color: "from-purple-700 to-purple-800" },
-            ].map((m, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                <div className={`h-1.5 bg-gradient-to-r ${m.color}`} />
-                <div className="p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xs font-semibold text-purple-600 bg-purple-50 px-2 py-1 rounded-full">{m.empresa}</span>
-                    <span className="text-xs text-gray-400">{m.data}</span>
-                  </div>
-                  <h4 className="font-bold text-gray-900 mb-2 text-sm leading-snug">{m.titulo}</h4>
-                  <p className="text-xs text-gray-600 mb-3 leading-relaxed">{m.resumo}</p>
-                  <div className="bg-purple-50 rounded-lg p-3">
-                    <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
-                    <p className="text-xs text-gray-700 leading-relaxed">{m.impacto}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Implicação Estratégica */}
-      <section className="py-16 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-3 mb-6">
-            <img src={mascote} alt="iônIA" className="h-14 w-auto opacity-90" />
-            <div>
-              <p className="text-purple-200 text-xs font-semibold uppercase tracking-widest mb-1">Implicação Estratégica</p>
-              <h3 className="text-2xl font-bold">O que mudou de Maio para Junho</h3>
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+              <Calendar className="w-3 h-3" />
+              Junho de 2026
             </div>
-          </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { titulo: "Regulação chegou com dentes", desc: "CNE não apenas orientou — classificou por risco. Produtos que monitoram emoção ou geram decisão automatizada sobre aluno estão proibidos. Compliance deixou de ser opcional." },
-              { titulo: "Capital institucional valida o mercado", desc: "BNDES + R$ 300M na Positivo é o sinal mais claro: o setor deixou de ser experimento e virou prioridade de política industrial. Modelo replicável por outros grupos." },
-              { titulo: "Escala saiu do piloto", desc: "26 mil PEIs em 3 meses — é a primeira evidência de escala real de IA no ensino formal BR. Transforma argumento de vendas: deixou de ser 'pode funcionar', virou 'já funciona'." },
-              { titulo: "Big techs acelerando pelo canal público", desc: "Google + UNICEF escolheu escola pública como porta de entrada — onde nenhum player BR tem relacionamento multilateral comparável. Diferente da ameaça privada, essa é mais lenta mas mais ampla." },
-            ].map((item, i) => (
-              <div key={i} className="bg-white/10 rounded-xl p-5 border border-white/20">
-                <h4 className="font-bold text-white mb-2">{item.titulo}</h4>
-                <p className="text-purple-100 text-sm leading-relaxed">{item.desc}</p>
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#FF6B35] to-[#FF8C5A] text-white rounded-full">
+                <Sparkles className="w-4 h-4" />
+                <span className="text-sm font-semibold">INSIGHT DA EDIÇÃO</span>
               </div>
-            ))}
-          </div>
+            </div>
+            <h1 className="text-3xl md:text-5xl text-gray-900 font-bold mb-6 leading-tight">
+              O Brasil chegou ao ponto de inflexão:<br />
+              <span className="text-[#6B46C1]">IA na educação virou objeto de regulação, capital e escala</span>
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              CNE aprovou diretrizes com semáforo de riscos, BNDES injetou R$ 300M na Positivo e Plurall IA gerou 26 mil PEIs em 3 meses. O mercado não discute mais se — disputa quem chega primeiro.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Oportunidades */}
-      <section className="py-16 px-6 bg-purple-50/30">
+      {/* Resumo executivo */}
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
-            <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
-            <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
-          </div>
-          <div className="grid md:grid-cols-2 gap-5">
-            {[
-              { titulo: "PEI automatizado com IA para inclusão", desc: "Plurall IA provou a escala — 26 mil PEIs em 3 meses. Com 5,1M de alunos com deficiência no Brasil e menos de 30% com PEI adequado, a oportunidade é enorme e urgente.", destaque: true },
-              { titulo: "Governança auditável para compliance CNE", desc: "CNE definiu o semáforo. Produto que entrega rastreabilidade de decisões de IA + log auditável + relatório para gestor vira requisito de entrada no mercado público regulado.", destaque: true },
-              { titulo: "Analytics prescritivo com dado SAEB", desc: "Moderna Aprova Brasil mostrou o modelo: SAEB + recomendação pedagógica + IA. Oportunidade para plataformas com dado de desempenho conectar performance com intervenção.", destaque: false },
-              { titulo: "Produto de formação docente integrada à ferramenta", desc: "79% dos professores não sabem ensinar com IA. Produto que treina o professor enquanto ele usa — não em curso separado — tem retenção comprovada e diferenciação durável.", destaque: false },
-            ].map((item, i) => (
-              <div key={i} className={`p-6 rounded-2xl border-2 transition-all ${item.destaque ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg' : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'}`}>
-                <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
-                  <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
-                </div>
-                <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
-                <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
-                {item.destaque && <span className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white">Prioritário</span>}
-              </div>
-            ))}
-          </div>
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
+              <FileText className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              Principais <span className="text-[#6B46C1]">Implicações</span>
+            </h2>
+            <div className="space-y-4">
+              {[
+                { titulo: "CNE aprova semáforo de riscos para IA (mai/2026)", desc: "Compliance vira requisito de entrada — não diferencial opcional. Produtos sem governança auditável perdem acesso ao mercado público regulado.", cor: "border-[#6B46C1]" },
+                { titulo: "BNDES injeta R$ 300M na Positivo para IA + plataforma MARIA com GPT", desc: "Capital institucional valida o setor — modelo replicável por outros grupos. Vertical integrada (hardware + software + IA própria) cria vantagem estrutural.", cor: "border-[#FF6B35]" },
+                { titulo: "Moderna relança Aprova Brasil com IA para 800k alunos e SAEB (mai/2026)", desc: "Defesa de base instalada com upgrade tecnológico — produto com 15 anos ganha nova vida. Integrar conteúdo + avaliação SAEB + IA + analytics num único produto é o novo benchmark público.", cor: "border-[#FF6B35]" },
+                { titulo: "Google + UNICEF entram no mercado público BR com Gemini e NotebookLM (mai/2026)", desc: "Big tech contorna ausência de conteúdo BR via parceria institucional multilateral. Resposta não é produto melhor — é relacionamento mais profundo com redes e secretarias.", cor: "border-[#6B46C1]" },
+                { titulo: "Plurall IA: 26 mil PEIs gerados, 2 mil escolas ativas em 3 meses", desc: "Primeira prova de escala real de IA no ensino formal brasileiro. PEI automatizado deixou de ser hipótese — é demanda comprovada e mercado aberto.", cor: "border-[#6B46C1]" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: -16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className={`bg-white p-6 rounded-xl border-l-4 ${item.cor} shadow-sm hover:shadow-md transition-shadow`}
+                >
+                  <p className="font-semibold text-gray-900 mb-1">{item.titulo}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
+      {/* Principais movimentos */}
+      <section className="py-20 px-6 bg-purple-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <TrendingUp className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Principais Movimentos</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              Movimentos <span className="text-[#6B46C1]">de Junho</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-5">
+              {[
+                { num: "01", titulo: "CNE aprova diretrizes com semáforo de riscos para IA", desc: "CNE aprovou parecer que classifica tecnologias por risco: proibiu vigilância emocional e perfilização psicológica; exige supervisão humana em correção automatizada.", impacto: "Compliance vira requisito de entrada no mercado público. Produto sem governança auditável perde acesso a contratos regulados.", cor: "from-purple-600 to-purple-700" },
+                { num: "02", titulo: "BNDES injeta R$ 300M na Positivo — plataforma MARIA integra GPT", desc: "Positivo fechou financiamento de até R$ 300M com BNDES para Plano de Inovação 2026–2028, incluindo MARIA, assistente de IA que monta planos de estudo personalizados.", impacto: "Vertical integrada (hardware + software + IA própria) cria vantagem estrutural difícil de replicar por players apenas de software.", cor: "from-purple-700 to-purple-800" },
+                { num: "03", titulo: "Moderna relança Aprova Brasil com IA para 800k alunos", desc: "Soluções Moderna lançou nova versão do Aprova Brasil com monitoramento em tempo real, análise de performance no SAEB e intervenção pedagógica baseada em IA.", impacto: "Produto de 15 anos ganhou nova vida com IA integrada. Benchmark: conteúdo + SAEB + analytics em plataforma única.", cor: "from-purple-500 to-purple-600" },
+                { num: "04", titulo: "Google + UNICEF parceria 3 anos no Brasil", desc: "Parceria trienal anuncia uso de Gemini e NotebookLM em escolas públicas brasileiras. Google.org destina R$ 5M para expandir programa Experience AI no Brasil.", impacto: "Big tech contorna ausência de conteúdo brasileiro via parceria institucional multilateral — canal de distribuição diferente dos players privados.", cor: "from-purple-600 to-violet-600" },
+                { num: "05", titulo: "Plurall IA: 26 mil PEIs gerados em 3 meses", desc: "Em 3 meses de uso, mais de 2 mil escolas criaram pelo menos um PEI na plataforma Plurall IA, com 26 mil conteúdos adaptados gerados. Predição por IA prevista para 2026.", impacto: "Primeira prova de escala real de IA no ensino formal brasileiro. PEI automatizado saiu de hipótese para demanda comprovada.", cor: "from-purple-600 to-purple-700" },
+                { num: "06", titulo: "Bett Brasil 2026: 65 mil visitantes, +40% vs 2025", desc: "Maior edição da história do evento com lançamentos de Somos, Moderna, Super Professor, SoftBank Robotics (Léia) e relatório OCDE em português.", impacto: "Mercado saiu do discurso para o produto. Volume de lançamentos indica corrida por posicionamento antes da regulação final do CNE.", cor: "from-purple-700 to-purple-800" },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.08 }}
+                  className="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg hover:border-[#6B46C1] transition-all"
+                >
+                  <div className={`bg-gradient-to-r ${item.cor} px-6 py-4`}>
+                    <span className="text-white/50 text-xs font-bold tracking-widest">{item.num}</span>
+                    <p className="text-white font-bold mt-1 leading-snug">{item.titulo}</p>
+                  </div>
+                  <div className="px-6 py-4">
+                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{item.desc}</p>
+                    <div className="bg-purple-50 rounded-lg p-3">
+                      <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
+                      <p className="text-xs text-gray-700 leading-relaxed">{item.impacto}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Implicação estratégica */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full mb-6">
+              <Sparkles className="w-4 h-4 text-[#FF6B35]" />
+              <span className="text-sm text-[#FF6B35] font-medium">Implicação Estratégica</span>
+            </div>
+            <div className="bg-gradient-to-r from-[#6B46C1] to-[#5B3A9E] p-8 md:p-10 rounded-2xl text-white">
+              <div className="flex items-start gap-4">
+                <img src={mascote} alt="" className="h-14 w-auto flex-shrink-0 opacity-90" />
+                <div>
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed mb-3">
+                    O Brasil saiu do "se" e entrou no "quem chega primeiro". Regulação aprovada, capital institucional injetado, escala comprovada — o mercado entrou em fase de corrida por posicionamento.
+                  </p>
+                  <p className="text-white/70 text-sm">
+                    Quem conectar compliance + dado longitudinal + IA prescritiva numa jornada única define o padrão do próximo ciclo educacional.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Oportunidades de produto */}
+      <section className="py-20 px-6 bg-purple-50/30">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full mb-6">
+              <Lightbulb className="w-4 h-4 text-[#6B46C1]" />
+              <span className="text-sm text-[#6B46C1] font-medium">Oportunidades de Produto</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+              O que construir <span className="text-[#6B46C1]">a partir disso</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { titulo: "PEI automatizado com IA para inclusão", desc: "Plurall IA provou a escala — 26 mil PEIs em 3 meses. Com 5,1M de alunos com deficiência no Brasil e menos de 30% com PEI adequado, a oportunidade é enorme e urgente.", destaque: true },
+                { titulo: "Governança auditável para compliance CNE", desc: "CNE definiu o semáforo. Produto que entrega rastreabilidade de decisões de IA + log auditável + relatório para gestor vira requisito de entrada no mercado público regulado.", destaque: true },
+                { titulo: "Analytics prescritivo com dado SAEB", desc: "Moderna Aprova Brasil mostrou o modelo: SAEB + recomendação pedagógica + IA. Oportunidade para plataformas com dado de desempenho conectar performance com intervenção.", destaque: false },
+                { titulo: "Produto de formação docente integrada à ferramenta", desc: "79% dos professores não sabem ensinar com IA. Produto que treina o professor enquanto ele usa — não em curso separado — tem retenção comprovada e diferenciação durável.", destaque: false },
+              ].map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.08 }}
+                  className={`p-6 rounded-2xl border-2 transition-all ${
+                    item.destaque
+                      ? 'bg-gradient-to-br from-[#6B46C1] to-[#5B3A9E] text-white border-transparent shadow-lg'
+                      : 'bg-white border-purple-200 hover:border-[#FF6B35] hover:shadow-md'
+                  }`}
+                >
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center mb-3 ${item.destaque ? 'bg-white/20' : 'bg-purple-100'}`}>
+                    <Lightbulb className={`w-4 h-4 ${item.destaque ? 'text-white' : 'text-[#6B46C1]'}`} />
+                  </div>
+                  <h3 className={`font-bold mb-2 ${item.destaque ? 'text-white' : 'text-gray-900'}`}>{item.titulo}</h3>
+                  <p className={`text-sm leading-relaxed ${item.destaque ? 'text-white/90' : 'text-gray-600'}`}>{item.desc}</p>
+                  {item.destaque && <span className="inline-block mt-3 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white">Prioritário</span>}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Navegação inferior */}
       <section className="py-12 px-6 bg-purple-50/40 border-t border-gray-100">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <button
             onClick={onBackToEdicoes}
             className="flex items-center gap-2 px-5 py-3 border border-[#6B46C1] text-[#6B46C1] rounded-xl font-medium hover:bg-purple-50 transition-colors text-sm"
           >
-            <BookOpen className="w-4 h-4" />
-            Todas as Edições
+            <Library className="w-4 h-4" />
+            Voltar para edições anteriores
           </button>
           <button
             onClick={onBack}
             className="flex items-center gap-2 px-5 py-3 bg-[#6B46C1] text-white rounded-xl font-medium hover:bg-[#5B3A9E] transition-colors text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
-            Edição Atual
+            Voltar para edição atual
           </button>
         </div>
       </section>
 
-      <footer className="py-10 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <img src={logoSmall} alt="Iônica" className="h-6 w-auto" style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }} />
-            <div>
-              <p className="text-white/80 text-sm font-semibold">Pulso IA</p>
-              <p className="text-white/50 text-xs">Radar de IA na Educação · Junho 2026</p>
-            </div>
+      {/* Footer */}
+      <footer className="py-12 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <img src={mascote} alt="PULSO" className="h-16 w-auto mx-auto mb-4 drop-shadow-lg" />
+          <p className="text-white/70 text-sm font-medium mb-1">PULSO — Radar de IA na Educação</p>
+          <div className="pt-5 border-t border-white/15 mt-5 space-y-1">
+            <p className="text-white/60 text-xs">Curadoria e análise: <span className="text-white/80 font-medium">Silvana Helena</span></p>
+            <p className="text-white/40 text-xs">Hub de IA — Iônica & FTD Com Você · Junho de 2026</p>
           </div>
-          <img src={logoFtd} alt="FTD" className="h-4 w-auto" style={{ filter: "brightness(0) invert(1)", opacity: 0.55 }} />
         </div>
       </footer>
     </div>
   );
 }
+
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('insight');
