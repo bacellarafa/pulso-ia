@@ -226,13 +226,13 @@ function EdicaoAbril2026({
       <footer className="py-10 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logoSmall} alt="Iônica" className="h-7 w-auto opacity-80" />
+            <img src={logoSmall} alt="Iônica" className="h-6 w-auto" style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }} />
             <div>
               <p className="text-white/80 text-sm font-semibold">Pulso IA</p>
               <p className="text-white/50 text-xs">Radar de IA na Educação · Abril 2026</p>
             </div>
           </div>
-          <img src={logoFtd} alt="FTD" className="h-6 w-auto opacity-40" />
+          <img src={logoFtd} alt="FTD" className="h-5 w-auto" style={{ filter: "brightness(0) invert(1)", opacity: 0.55 }} />
         </div>
       </footer>
     </div>
@@ -751,13 +751,13 @@ function EdicaoJunho2026({
       <footer className="py-10 px-6 bg-gradient-to-br from-[#6B46C1] to-[#4C3290] text-white">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logoSmall} alt="Iônica" className="h-7 w-auto opacity-80" />
+            <img src={logoSmall} alt="Iônica" className="h-6 w-auto" style={{ filter: "brightness(0) invert(1)", opacity: 0.7 }} />
             <div>
               <p className="text-white/80 text-sm font-semibold">Pulso IA</p>
               <p className="text-white/50 text-xs">Radar de IA na Educação · Junho 2026</p>
             </div>
           </div>
-          <img src={logoFtd} alt="FTD" className="h-5 w-auto opacity-40" />
+          <img src={logoFtd} alt="FTD" className="h-4 w-auto" style={{ filter: "brightness(0) invert(1)", opacity: 0.55 }} />
         </div>
       </footer>
     </div>
@@ -863,34 +863,48 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header Fixo */}
-      <header className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 py-3 md:py-4">
-          <div className="flex items-center justify-between mb-4 md:mb-0">
-            <div className="flex items-center gap-3 md:gap-4">
-              <div className="relative flex-shrink-0">
-                <img src={mascoteIA} alt="PULSO" className="h-10 md:h-12 w-auto" />
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <h1 className="text-base md:text-lg font-bold text-gray-900 tracking-tight">PULSO</h1>
-                  <span className="hidden md:inline text-xs text-gray-400 font-normal">·</span>
-                  <span className="hidden md:inline text-xs text-gray-500">Radar de IA na Educação</span>
+      <header className="fixed top-0 left-0 right-0 bg-white/96 backdrop-blur-md z-50 border-b border-gray-100/80 shadow-sm">
+        <div className="max-w-7xl mx-auto px-5 md:px-8">
+
+          {/* Linha principal */}
+          <div className="flex items-center justify-between h-14 md:h-16">
+
+            {/* Identidade */}
+            <div className="flex items-center gap-3">
+              <img src={mascoteIA} alt="PULSO" className="h-8 md:h-9 w-auto flex-shrink-0" />
+              <div className="flex flex-col justify-center leading-none">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-sm md:text-base font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>PULSO</span>
+                  <span className="hidden md:inline text-[11px] text-gray-400 font-normal">Radar de IA na Educação</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="bg-purple-50/60 px-3 py-2 rounded-lg border border-purple-100/60">
-                    <p className="text-[10px] text-gray-400 font-medium uppercase tracking-widest leading-none mb-0.5">Edição Atual</p>
-                    <p className="text-xs font-semibold text-[#6B46C1] leading-tight">Julho de 2026</p>
-                  </div>
-                </div>
+                <span className="inline-flex items-center gap-1 mt-0.5">
+                  <span className="text-[9px] md:text-[10px] font-semibold text-[#6B46C1] uppercase tracking-widest">Julho 2026</span>
+                  <span className="w-1 h-1 rounded-full bg-[#FF6B35] inline-block" />
+                  <span className="text-[9px] md:text-[10px] text-gray-400 font-medium">Edição atual</span>
+                </span>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <img src={logoIonica} alt="Iônica" className="h-6 md:h-7 w-auto opacity-70 hidden sm:block" />
-              <img src={logoFTD} alt="FTD" className="h-5 md:h-6 w-auto opacity-50 hidden sm:block" />
+
+            {/* Logos parceiros — monocromáticos, discretos */}
+            <div className="hidden sm:flex items-center gap-3 pl-4 border-l border-gray-100">
+              <img
+                src={logoIonica}
+                alt="Iônica"
+                className="h-5 md:h-5 w-auto"
+                style={{ filter: 'grayscale(100%) opacity(0.45)' }}
+              />
+              <div className="w-px h-4 bg-gray-200" />
+              <img
+                src={logoFTD}
+                alt="FTD Com Você"
+                className="h-4 md:h-4 w-auto"
+                style={{ filter: 'grayscale(100%) opacity(0.40)' }}
+              />
             </div>
           </div>
 
-          <nav className="flex items-center gap-1 overflow-x-auto scrollbar-hide">
+          {/* Nav de seções */}
+          <nav className="flex items-center gap-0.5 overflow-x-auto scrollbar-hide pb-1.5">
             {[
               { id: 'insight', label: 'Insight' },
               { id: 'resumo', label: 'Resumo' },
@@ -906,11 +920,12 @@ export default function App() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
+                className={`px-3 py-1 rounded-md text-[11px] font-medium whitespace-nowrap transition-all ${
                   activeSection === item.id
                     ? 'bg-[#6B46C1] text-white'
-                    : 'text-gray-600 hover:bg-purple-50 hover:text-[#6B46C1]'
+                    : 'text-gray-500 hover:bg-purple-50 hover:text-[#6B46C1]'
                 }`}
+                style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 {item.label}
               </button>
@@ -1767,26 +1782,6 @@ export default function App() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            {/* Player de vídeo iônIA */}
-            <div className="max-w-3xl mx-auto mb-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full mb-5">
-                <Globe className="w-3 h-3 text-purple-200" />
-                <span className="text-xs text-purple-200 font-medium uppercase tracking-widest">iônIA</span>
-              </div>
-              <h3 className="text-white text-xl font-bold mb-2">Conheça a iônIA</h3>
-              <p className="text-white/60 text-sm mb-6">A robozinha de IA da Iônica</p>
-              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/30 border border-white/10">
-                <video
-                  controls
-                  className="w-full"
-                  preload="metadata"
-                >
-                  <source src={new URL('../imports/ionia-video.mp4', import.meta.url).href} type="video/mp4" />
-                  Seu navegador não suporta vídeo HTML5.
-                </video>
-              </div>
-            </div>
-
             <div className="flex justify-center mb-5">
               <img
                 src={mascoteIA}
