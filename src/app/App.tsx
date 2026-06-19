@@ -965,35 +965,36 @@ export default function App() {
           {/* Linha principal */}
           <div className="flex items-center justify-between h-14 md:h-16">
 
-            {/* Identidade */}
+            {/* Identidade — mascote + nome */}
             <div className="flex items-center gap-3">
               <img src={mascoteIA} alt="PULSO" className="h-8 md:h-9 w-auto flex-shrink-0" />
               <div className="flex flex-col justify-center leading-none">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-sm md:text-base font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>PULSO</span>
-                  <span className="hidden md:inline text-[11px] text-gray-400 font-normal">Radar de IA na Educação</span>
-                </div>
-                <span className="inline-flex items-center gap-1 mt-0.5">
-                  <span className="text-[9px] md:text-[10px] font-semibold text-[#6B46C1] uppercase tracking-widest">Julho 2026</span>
-                  <span className="w-1 h-1 rounded-full bg-[#FF6B35] inline-block" />
-                  <span className="text-[9px] md:text-[10px] text-gray-400 font-medium">Edição atual</span>
-                </span>
+                <span className="text-sm md:text-base font-bold text-gray-900 tracking-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>PULSO</span>
+                <span className="hidden md:inline text-[11px] text-gray-400 font-normal mt-0.5">Radar de IA na Educação</span>
               </div>
             </div>
 
-            {/* Logos parceiros — monocromáticos, discretos */}
-            <div className="hidden sm:flex items-center gap-3 pl-4 border-l border-gray-100">
+            {/* Direita — edição + logos parceiros, todos alinhados verticalmente */}
+            <div className="hidden sm:flex items-center gap-4">
+              {/* Badge de edição */}
+              <div className="flex flex-col items-end leading-none">
+                <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Julho 2026</span>
+                <span className="text-[10px] text-gray-400 font-medium mt-0.5">Edição atual</span>
+              </div>
+              {/* Divisor */}
+              <div className="w-px h-6 bg-gray-200" />
+              {/* Logos */}
               <img
                 src={logoIonica}
                 alt="Iônica"
-                className="h-5 md:h-5 w-auto"
+                className="h-5 w-auto"
                 style={{ filter: 'grayscale(100%) opacity(0.45)' }}
               />
               <div className="w-px h-4 bg-gray-200" />
               <img
                 src={logoFTD}
                 alt="FTD Com Você"
-                className="h-4 md:h-4 w-auto"
+                className="h-4 w-auto"
                 style={{ filter: 'grayscale(100%) opacity(0.40)' }}
               />
             </div>
