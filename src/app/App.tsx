@@ -977,8 +977,8 @@ export default function App() {
             {/* Direita — edição + logos parceiros */}
             <div className="hidden sm:flex items-center gap-4">
               <div className="flex flex-col items-end leading-none">
-                <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Julho 2026</span>
-                <span className="text-[10px] text-gray-400 font-medium mt-0.5">Edição atual</span>
+                <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Edição #07</span>
+                <span className="text-[10px] text-gray-400 font-medium mt-0.5">19 Jun – 03 Jul 2026</span>
               </div>
               <div className="w-px h-6 bg-gray-200" />
               <img src={logoIonica} alt="Iônica" className="h-5 w-auto" style={{ filter: 'grayscale(100%) opacity(0.45)' }} />
@@ -1097,45 +1097,41 @@ export default function App() {
               <span className="text-sm text-[#6B46C1] font-medium">Resumo Executivo</span>
             </div>
 
-            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-12">
-              O que mudou em <span className="text-[#6B46C1]">Junho/Julho 2026</span>
+            <h2 className="text-4xl md:text-5xl text-gray-900 font-bold mb-4">
+              O que mudou desde a <span className="text-[#6B46C1]">última edição</span>
             </h2>
+            <p className="text-gray-500 mb-12 text-lg">O que a liderança precisa entender em 2 minutos — conclusões, não notícias.</p>
 
             <div className="space-y-4">
               {[
                 {
-                  movimento: "Google lança simulados gratuitos do ENEM no Gemini (jun/2026)",
-                  impacto: "Big tech entra no mercado de preparação para vestibular com canal direto ao aluno — zero fricção, zero custo",
-                  produto: "Players de cursinho e preparatório precisam redirecionar diferencial para o que o Gemini não entrega: mentoria humana, trilha personalizada por histórico, conteúdo adaptado à escola"
+                  conclusao: "Big techs começaram a competir diretamente pela distribuição educacional",
+                  raciocinio: "O Google não bateu na porta da escola — entrou pelo vestibulando. Simulado ENEM gratuito no Gemini é o primeiro produto de IA desenhado especificamente para o contexto brasileiro. O canal de distribuição virou o diferencial, não o produto."
                 },
                 {
-                  movimento: "CNE abre consulta pública sobre diretrizes de IA (até 14/jun/2026)",
-                  impacto: "Última janela antes da regulação ser fechada — quem contribui influencia critérios que valerão por anos",
-                  produto: "Participar não é opcional para quem quer contratos públicos: a regulação vai exigir adequações e quem moldou os critérios chega na frente"
+                  conclusao: "A regulação de IA entrou em fase prática no Brasil",
+                  raciocinio: "O CNE encerrou consulta pública e está finalizando diretrizes concretas: proibição de vigilância emocional, supervisão humana obrigatória em correção automatizada. Compliance deixou de ser futuro e virou requisito de entrada."
                 },
                 {
-                  movimento: "Moderna Plus Educação Digital lançada para PNLD 2026 — Ensino Médio",
-                  impacto: "Material digital integrado ao PNLD cria lock-in curricular pelo livro didático aprovado pelo MEC",
-                  produto: "Ensino Médio público é o maior mercado BR — player com material PNLD aprovado tem distribuição de 8M+ alunos garantida sem custo de aquisição"
+                  conclusao: "Gratuidade passou a ser estratégia de aquisição em escala",
+                  raciocinio: "Google Summit gratuito, MEC Idiomas gratuito, Khan Academy gratuito até 2027 — todos usam zero cost como canal de adoção antes de monetizar. Player sem versão gratuita perde a corrida de distribuição antes de competir."
                 },
                 {
-                  movimento: "Gemini Summit 2026: Google forma professores brasileiros em IA — evento gratuito",
-                  impacto: "Google usa formação docente gratuita como canal de adoção do ecossistema — estratégia de longo prazo que players BR precisam responder",
-                  produto: "Formação gratuita cria vantagem de rede: professor formado pelo Google usa Gemini na sala, não Copilot nem ferramenta proprietária"
+                  conclusao: "O diferencial competitivo está migrando do conteúdo para os dados de aprendizagem",
+                  raciocinio: "Gemini tem acesso, mas não tem o histórico do aluno. Geekie tem analytics de coordenador. Plurall tem PEIs com IA treinada em dado real. Quem tem o dado longitudinal do aluno tem o ativo que big tech não consegue copiar."
                 },
                 {
-                  movimento: "Geekie expande Caderno do Estudo Inteligente para novos componentes + Ultravisão da Coordenação",
-                  impacto: "Geekie aprofunda integração física-digital: material impresso com QR codes ligados à plataforma, analytics para coordenadores",
-                  produto: "Modelo híbrido (impresso + IA) resolve a realidade das escolas que ainda usam caderno — diferencial que produto 100% digital não tem"
+                  conclusao: "O coordenador pedagógico emergiu como buyer estratégico negligenciado",
+                  raciocinio: "Geekie lançou tela específica para coordenador com dado consolidado de turma. O mercado EdTech sempre focou em professor e aluno — coordenador é quem renova contrato, apresenta resultado para direção e influencia a compra do próximo ciclo."
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-[#FF6B35] shadow-sm hover:shadow-md transition-shadow">
-                  <p className="font-bold text-gray-900 mb-2">{item.movimento}</p>
-                  <p className="text-sm text-gray-600 mb-1"><span className="font-semibold text-[#6B46C1]">Impacto:</span> {item.impacto}</p>
-                  <p className="text-sm text-gray-500"><span className="font-semibold">Para produto:</span> {item.produto}</p>
+                  <p className="font-bold text-gray-900 mb-2 text-base">{item.conclusao}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{item.raciocinio}</p>
                 </div>
               ))}
             </div>
+
           </motion.div>
         </div>
       </section>
@@ -1169,48 +1165,39 @@ export default function App() {
                   color: "from-purple-600 to-purple-700"
                 },
                 {
-                  titulo: "CNE consulta pública sobre IA: janela para players BR influenciarem a regulação",
+                  titulo: "CNE encerra consulta pública sobre IA na Educação — diretrizes em fase final",
                   empresa: "CNE / MEC",
-                  data: "18 mai–14 jun/2026",
-                  resumo: "Após aprovar diretrizes em maio, CNE abriu consulta pública virtual para contribuições de escolas, empresas e especialistas até 14 de junho. Diretrizes classificam riscos: proibição de vigilância emocional, exigência de supervisão humana em correção automatizada.",
-                  impacto: "Quem contribuiu para a consulta tem argumento técnico de alinhamento regulatório no processo comercial. Quem não contribuiu se submete aos critérios de quem contribuiu.",
-                  fonte: "https://www.apufsc.org.br/2026/05/12/cne-aprova-diretrizes-para-ia-na-educacao/",
+                  data: "18 mai–16 jun/2026",
+                  resumo: "O CNE conduziu consulta pública via plataforma Brasil Participativo para colher contribuições de escolas, empresas e especialistas sobre as diretrizes de IA na Educação Básica e Superior. O documento proíbe vigilância emocional e exige supervisão humana em correções automatizadas.",
+                  impacto: "Quem participou tem argumento técnico de alinhamento regulatório no processo comercial. Compliance virou moat — não custo.",
+                  fonte: "https://brasilparticipativo.presidencia.gov.br/processes/iaeducacaobrasileira",
                   color: "from-purple-700 to-purple-800"
-                },
-                {
-                  titulo: "Moderna Plus Educação Digital lançada para PNLD 2026 — Ensino Médio",
-                  empresa: "Moderna / Santillana",
-                  data: "Fev–Jun 2026",
-                  resumo: "Material didático integrado para o Ensino Médio como parte do PNLD 2026, combinando recurso impresso com plataforma digital. Aprovação pelo PNLD garante distribuição para 8M+ alunos do Ensino Médio público.",
-                  impacto: "Lock-in curricular pelo livro didático aprovado. Player com material PNLD aprovado tem distribuição garantida — modelo de negócio com custo de aquisição próximo a zero.",
-                  fonte: "https://www.facebook.com/editoramoderna/videos/pnld-2026-ensino-m%C3%A9dio-moderna-plus-educa%C3%A7%C3%A3o-digital/1716753715679384/",
-                  color: "from-purple-500 to-purple-600"
                 },
                 {
                   titulo: "Google Gemini Summit 2026: formação gratuita de professores brasileiros em IA",
                   empresa: "Google Education",
-                  data: "Jun/2026",
-                  resumo: "Evento gratuito de três semanas forma professores, gestores e lideranças educacionais brasileiras em uso do Gemini. Programação inclui planos de aula aumentados, alinhamento com BNCC e uso ético e responsável da IA.",
-                  impacto: "Formação gratuita é estratégia de lock-in suave: professor formado pelo Google adota Gemini no fluxo de trabalho. Escala nacional sem custo de aquisição para o Google.",
+                  data: "Mai–Jun/2026",
+                  resumo: "Evento gratuito de três semanas formou professores, gestores e lideranças educacionais brasileiras em uso do Gemini — planos de aula aumentados, alinhamento com BNCC e uso ético de IA. Estratégia de lock-in via formação docente, não via contrato.",
+                  impacto: "Professor formado pelo Google adota Gemini no fluxo de trabalho. Escala nacional de adoção sem custo de aquisição — movimento que players BR precisam responder com formação integrada ao próprio produto.",
                   fonte: "https://patriciencias.com/google-gemini-summit-2026/",
                   color: "from-purple-600 to-violet-600"
                 },
                 {
-                  titulo: "Geekie expande Caderno do Estudo Inteligente + lança Ultravisão da Coordenação",
+                  titulo: "Geekie One lança novas ferramentas pedagógicas — Ultravisão da Coordenação",
                   empresa: "Geekie",
-                  data: "Jun/2026",
-                  resumo: "Expansão do Caderno do Estudo Inteligente para novos componentes curriculares. Lançamento da Ultravisão da Coordenação — tela de gestão com dados consolidados de alunos, turmas e professores para coordenadores pedagógicos.",
-                  impacto: "Modelo híbrido (impresso + IA + analytics) endereça realidade das escolas que não são 100% digitais. Ultravisão cria camada de gestão que retém o cliente no ecossistema.",
-                  fonte: "https://www.geekie.com.br/melhor-solucao-de-tecnologia-educacional-para-escolas-particulares-tecnologia-educacional/",
+                  data: "2026",
+                  resumo: "Geekie One disponibilizou novas ferramentas para potencializar ações pedagógicas, incluindo a Ultravisão da Coordenação — tela de gestão com dados consolidados de alunos, turmas e professores em tempo real para coordenadores pedagógicos.",
+                  impacto: "Coordenador como buyer estratégico: produto que serve ao coordenador cria retenção diferente da que serve só ao professor ou aluno. Ultravisão cria camada de gestão que fideliza o ecossistema.",
+                  fonte: "https://www.geekie.com.br/geekie-one-disponibiliza-novas-ferramentas-para-potencializar-acoes-pedagogicas/",
                   color: "from-purple-700 to-purple-800"
                 },
                 {
-                  titulo: "MEC Idiomas lançado com tutor de IA para correção de pronúncia e conversação",
+                  titulo: "MEC lança plataforma gratuita de idiomas com IA — 212 mil usuários em dias",
                   empresa: "MEC",
-                  data: "Abr–Jun/2026",
-                  resumo: "Plataforma gratuita MEC Idiomas disponível para computadores e Android/iOS oferece centenas de aulas em seis níveis de proficiência com tutor de IA que corrige pronúncia e permite prática de conversação em tempo real.",
-                  impacto: "Estado entregando produto de IA de qualidade gratuitamente cria benchmark público difícil de bater por preço. Diferencial para players privados precisa ser profundidade, personalização ou integração curricular.",
-                  fonte: "https://www.gov.br/mec/pt-br/assuntos/noticias/2026/abril/mec-lanca-orientacoes-sobre-ia-na-educacao-basica",
+                  data: "3 jun/2026",
+                  resumo: "Plataforma MEC Idiomas oferece inglês e espanhol do nível A1 ao C2 com agente de IA para apoio, esclarecimento de dúvidas e prática de conversação. Disponível em app para Android/iOS e web. Atingiu 212.302 usuários ativos em poucos dias.",
+                  impacto: "Estado entregando produto de IA de qualidade gratuitamente cria benchmark público difícil de bater por preço. Diferencial privado precisa ser personalização profunda por perfil de escola e dado longitudinal — não acesso.",
+                  fonte: "https://midiamax.com.br/cotidiano/2026/duolingo-brasileiro-mec-lanca-plataforma-gratuita-aprender-idiomas/",
                   color: "from-purple-600 to-purple-700"
                 },
               ].map((m, i) => (
@@ -1243,10 +1230,10 @@ export default function App() {
                       <p className="text-xs font-semibold text-purple-700 mb-1">Impacto estratégico</p>
                       <p className="text-sm text-gray-700 leading-relaxed">{m.impacto}</p>
                     </div>
-                    <button className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-50 text-[#6B46C1] rounded-lg group-hover:bg-[#6B46C1] group-hover:text-white transition-all font-medium text-sm mt-4">
+                    <a href={m.fonte} target="_blank" rel="noopener noreferrer" className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-purple-50 text-[#6B46C1] rounded-lg group-hover:bg-[#6B46C1] group-hover:text-white transition-all font-medium text-sm mt-4">
                       <ExternalLink className="w-4 h-4" />
                       Ver fonte
-                    </button>
+                    </a>
                   </div>
                 </motion.div>
               ))}
@@ -1413,7 +1400,7 @@ export default function App() {
               <div className="bg-red-50 rounded-2xl p-8 border border-red-100">
                 <div className="flex items-center gap-2 mb-6">
                   <TrendingDown className="w-5 h-5 text-red-500" />
-                  <p className="font-bold text-red-700 text-sm uppercase tracking-wide">Virou commodity em Julho/2026</p>
+                  <p className="font-bold text-red-700 text-sm uppercase tracking-wide">Virou commodity</p>
                 </div>
                 <div className="space-y-4">
                   {[
@@ -1437,7 +1424,7 @@ export default function App() {
               <div className="bg-green-50 rounded-2xl p-8 border border-green-100">
                 <div className="flex items-center gap-2 mb-6">
                   <CheckCircle className="w-5 h-5 text-green-600" />
-                  <p className="font-bold text-green-700 text-sm uppercase tracking-wide">Ainda diferencia em Julho/2026</p>
+                  <p className="font-bold text-green-700 text-sm uppercase tracking-wide">Ainda diferencia</p>
                 </div>
                 <div className="space-y-4">
                   {[
@@ -1488,7 +1475,7 @@ export default function App() {
                   {[
                     { titulo: "Gemini vai dominar a preparação para o ENEM", desc: "A ferramenta tem acesso, mas não tem o histórico do aluno nem o contexto da escola. Adoção massiva não é uso pedagógico real." },
                     { titulo: "IA regulamentada = IA paralisada", desc: "As diretrizes do CNE definem balizas, não proibições. Compliance vai acelerar adoção institucional, não frear." },
-                    { titulo: "PNLD digital vai substituir o livro impresso", desc: "Escola pública ainda tem realidade de conectividade fragmentada. Material híbrido (impresso + digital) é o produto viável, não 100% digital." },
+                    { titulo: "Formação docente em IA vai transformar a sala de aula rapidamente", desc: "Formação pontual sem mudança estrutural de currículo e avaliação não gera impacto sustentado. O que muda a sala de aula é formação integrada ao uso real da ferramenta — não evento isolado." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-orange-400 mt-1 flex-shrink-0">▸</span>
@@ -1508,7 +1495,7 @@ export default function App() {
                 <div className="space-y-5">
                   {[
                     { titulo: "Distribuição gratuita como estratégia de lock-in", desc: "Google Summit, MEC Idiomas, Khan Academy gratuito — todos usam gratuidade como canal de adoção. Modelo que players BR deveriam considerar para ganhar escala antes de monetizar." },
-                    { titulo: "Material PNLD como ativo estratégico de distribuição", desc: "Moderna Plus para Ensino Médio é prova: material aprovado pelo PNLD é o canal de distribuição mais barato do país para escola pública — zero custo de aquisição." },
+                    { titulo: "Coordenador pedagógico como novo centro de decisão de compra", desc: "Geekie lançou produto específico para coordenador. MEC e Google formam gestores, não só professores. Produto que serve ao coordenador cria retenção diferente — ele renova contrato e apresenta resultado para direção." },
                     { titulo: "Regulação criando requisito de entrada, não barreira", desc: "CNE definiu o que não pode. Quem está adequado usa conformidade como argumento comercial. Compliance é moat, não custo." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
@@ -1600,9 +1587,9 @@ export default function App() {
                   destaque: false
                 },
                 {
-                  titulo: "Conteúdo PNLD com IA integrada — ensino médio público",
-                  desc: "Moderna Plus para PNLD 2026 é prova de modelo: material aprovado = distribuição de 8M alunos sem custo de aquisição. Para players com capacidade editorial, PNLD digital com IA é o maior canal de escala do país.",
-                  persona: "Público",
+                  titulo: "Analytics para coordenador com dado real de turma e professor",
+                  desc: "Geekie validou a demanda com Ultravisão da Coordenação. Coordenador é quem renova contrato e apresenta resultado para direção. Produto que entrega visão consolidada de gestão cria retenção que ferramenta de aluno não cria.",
+                  persona: "Gestão",
                   destaque: true
                 },
                 {
