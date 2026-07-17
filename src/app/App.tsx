@@ -1254,7 +1254,7 @@ export default function App() {
             <div className="hidden sm:flex items-center gap-4">
               <div className="flex flex-col items-end leading-none">
                 <span className="text-[11px] font-bold text-[#6B46C1] uppercase tracking-widest">Edição #08</span>
-                <span className="text-[10px] text-gray-400 font-medium mt-0.5">20 Jun – 13 Jul 2026</span>
+                <span className="text-[10px] text-gray-400 font-medium mt-0.5">20 Jun – 17 Jul 2026</span>
               </div>
               <div className="w-px h-6 bg-gray-200" />
               <img src={logoIonica} alt="Iônica" className="h-5 w-auto" style={{ filter: 'grayscale(100%) opacity(0.45)' }} />
@@ -1317,7 +1317,7 @@ export default function App() {
 
             <div className="max-w-4xl mx-auto mb-12">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Em 15 dias, a Cogna elevou para 90% sua fatia no Educbank, a Teachy fez o <strong className="text-[#6B46C1]">primeiro M&A de IA em educação da América Latina</strong> e a Khan Academy admitiu que só 15% dos alunos usam o Khanmigo — e o relançou reconstruído. O mercado parou de comprar promessa: passou a comprar talento, base instalada e <strong className="text-[#6B46C1]">uso real medido</strong>.
+                Em quatro semanas, a Cogna elevou para 90% sua fatia no Educbank, a Teachy fez o <strong className="text-[#6B46C1]">primeiro M&A de IA em educação da América Latina</strong>, a Khan Academy admitiu que só 15% dos alunos usam o Khanmigo — e a Anthropic fechou a janela lançando o <strong className="text-[#6B46C1]">Claude for Teachers</strong>, gratuito para professores K-12 dos EUA, com privacidade negociada com o sindicato docente. O mercado parou de comprar promessa: passou a comprar talento, base instalada, canal docente e <strong className="text-[#6B46C1]">uso real medido</strong>.
               </p>
 
               <div className="bg-white p-8 rounded-2xl border-2 border-purple-100 shadow-sm">
@@ -1398,6 +1398,10 @@ export default function App() {
                 {
                   conclusao: "Compliance ganhou data",
                   raciocinio: "Com a consulta pública encerrada, o CNE realiza seminário nacional em julho e envia as diretrizes à homologação do MEC. Adequação regulatória deixou de ser projeto para 2027 — virou cronograma do segundo semestre de 2026."
+                },
+                {
+                  conclusao: "A big tech encontrou seu novo canal: o professor — com compliance como arma",
+                  raciocinio: "A Anthropic lançou o Claude for Teachers (14/jul): premium gratuito para professores K-12 verificados dos EUA, alinhado aos padrões dos 50 estados e com privacidade negociada com o sindicato AFT — que trabalha com OpenAI, Microsoft e Anthropic, mas não com o Google. Compliance deixou de ser custo regulatório e virou arma de aquisição de mercado."
                 },
               ].map((item, i) => (
                 <div key={i} className="bg-white p-6 rounded-xl border-l-4 border-[#FF6B35] shadow-sm hover:shadow-md transition-shadow">
@@ -1484,6 +1488,15 @@ export default function App() {
                   fonte: "https://www.edtechinnovationhub.com/news/only-15-percent-of-students-with-access-to-khanmigo-actually-use-it-khan-academy-admits",
                   color: "from-purple-600 to-violet-600"
                 },
+                {
+                  titulo: "Anthropic lança Claude for Teachers — gratuito para professores K-12 dos EUA",
+                  empresa: "Anthropic",
+                  data: "14 jul/2026",
+                  resumo: "Acesso premium gratuito para educadores verificados (inscrições até jun/2027), com biblioteca de skills docentes, currículos baseados em evidência mapeados aos padrões dos 50 estados e piloto na rede pública de Detroit. Dados não treinam o modelo e informações de alunos ficam sob DPA compatível com FERPA — privacidade construída em parceria com o sindicato AFT.",
+                  impacto: "Depois do aluno (Google) e do fluxo de estudo (Khan), a disputa chegou ao professor como canal de distribuição. Privacidade auditável negociada com o sindicato virou arma competitiva — o modelo a observar para o mercado brasileiro pós-diretrizes do CNE.",
+                  fonte: "https://www.chalkbeat.org/2026/07/14/anthropic-launches-claude-for-teachers-as-ai-companies-battle-for-classrooms/",
+                  color: "from-purple-700 to-purple-800"
+                },
               ].map((m, i) => (
                 <motion.div
                   key={i}
@@ -1558,6 +1571,7 @@ export default function App() {
                     { player: "Teachy", movimento: "Aquisição da Nero.AI (acquihiring, 7 dígitos) — time e IP incorporados", estrategia: "Consolidar-se como plataforma de IA educacional comprando capacidade técnica em vez de construir — velocidade como vantagem", maturidade: "Alta", impacto: "Médio-Alto" },
                     { player: "Google", movimento: "Simulados ENEM no ar no Gemini e no Modo IA da Busca, com a Akira Enem", estrategia: "Distribuição direta ao aluno em escala nacional, sem intermediação da escola — o gratuito como canal de aquisição", maturidade: "Alta", impacto: "Alto" },
                     { player: "Khan Academy", movimento: "Admissão dos 15% de uso + rollout do Khanmigo reconstruído para todos os distritos", estrategia: "Da feature ao fluxo: IA embutida na prática, com métrica de aprendizagem transferida como prova de valor", maturidade: "Alta", impacto: "Médio-Alto" },
+                    { player: "Anthropic", movimento: "Claude for Teachers gratuito para K-12 nos EUA (14/jul) + piloto em Detroit + pacto de privacidade com o sindicato AFT", estrategia: "Professor como canal de distribuição — gratuidade + confiança institucional como diferencial contra o Google", maturidade: "Alta", impacto: "Médio-Alto" },
                     { player: "MEC / Gov Federal", movimento: "Curso de IA para docentes do fundamental (26/jun) + MEC Idiomas em expansão", estrategia: "Estado como formador e distribuidor gratuito — eleva o piso de expectativa e pressiona o privado a diferenciar por profundidade", maturidade: "Baixa-Média", impacto: "Alto" },
                     { player: "CNE", movimento: "Consulta encerrada, seminário nacional em julho e homologação do MEC na sequência", estrategia: "Institucionalizar governança por nível de risco — transformar compliance em critério de acesso ao mercado", maturidade: "Média", impacto: "Alto" },
                   ].map((row, i) => (
@@ -1618,11 +1632,11 @@ export default function App() {
                   application: "Grupos educacionais podem acelerar roadmap comprando squads prontos de IA em vez de disputar contratações unitárias. Mapear boutiques de IA com tração vira tarefa de estratégia — antes que o concorrente o faça."
                 },
                 {
-                  empresa: "Gemini + Akira Enem (no ar)",
-                  pais: "Brasil",
-                  what: "Os simulados gratuitos do ENEM saíram do palco do Google for Brasil e chegaram ao aluno: prova completa ou por área, diagnóstico de lacunas e plano de estudos, no app Gemini e no Modo IA da Busca.",
-                  why: "Primeiro produto educacional de big tech desenhado para o Brasil em operação real — e em pleno semestre de preparação para o exame. A régua do que é 'gratuito e bom' subiu de forma permanente.",
-                  application: "O simulado avulso virou commodity definitiva. O espaço defensável do player BR é o preparo conectado ao histórico longitudinal do aluno, ao currículo da escola e ao acompanhamento docente — o que a distribuição de massa não entrega."
+                  empresa: "Anthropic Claude for Teachers",
+                  pais: "EUA",
+                  what: "Assistente premium gratuito para professores K-12 verificados: planos de aula alinhados aos padrões dos 50 estados via Learning Commons, materiais personalizados com dado do aluno, piloto em Detroit e privacidade validada pelo sindicato AFT — dados não treinam o modelo, DPA compatível com FERPA.",
+                  why: "Terceiro modelo de entrada da big tech na educação: nem pelo aluno (Google), nem pelo distrito (Khan) — pelo professor. E o argumento de venda não é feature: é confiança institucional, construída junto ao sindicato docente.",
+                  application: "Para o BR: assistente docente alinhado à BNCC com pacto público de privacidade (LGPD + diretrizes CNE) validado por entidades docentes seria diferencial inédito. Quem selar confiança com o professor primeiro captura o canal que renova a adoção."
                 },
               ].map((b, i) => (
                 <motion.div
@@ -1781,6 +1795,7 @@ export default function App() {
                     { titulo: "Consolidação do setor via M&A", desc: "Dois movimentos em 15 dias — Educbank (camada de operação) e Nero.AI (capacidade técnica). O capital está indo para ativos que encurtam caminho: talento, base instalada e dado. A onda tende a acelerar antes da homologação do CNE." },
                     { titulo: "Uso medido como moeda de credibilidade", desc: "A métrica de aprendizagem transferida da Khan ('acerto no item seguinte') tende a entrar em RFPs e processos de compra. Quem medir e publicar engajamento real primeiro define a régua da conversa comercial." },
                     { titulo: "Regulação como cronograma, não como debate", desc: "Seminário nacional em julho e homologação do MEC na sequência transformam as diretrizes em requisito datado. A pergunta deixou de ser 'o que o CNE vai exigir' e virou 'quem chega adequado primeiro'." },
+                    { titulo: "O professor virou o canal de distribuição da big tech", desc: "Google formou docentes no Summit, o MEC formou o fundamental e agora a Anthropic dá Claude premium de graça ao professor americano — com o sindicato validando a privacidade. Quem conquista o professor entra na escola sem passar por licitação; o movimento tende a chegar ao Brasil." },
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="text-blue-400 mt-1 flex-shrink-0">▸</span>
@@ -1799,7 +1814,7 @@ export default function App() {
                   <p className="font-bold text-gray-900">O padrão desta quinzena</p>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  A quinzena não teve um grande lançamento — e isso é o sinal. O capital foi para aquisições (Educbank, Nero.AI), a maior plataforma de IA educacional do mundo refez o produto com base em dado de uso real, e a regulação ganhou data. O mercado de IA na educação saiu da fase de prometer e entrou na fase de provar: quem mede aprendizagem de verdade, controla mais camadas da operação escolar e chega adequado à homologação do CNE define o próximo ciclo. Feature não é mais notícia — consolidação e evidência são.
+                  A janela não teve um grande lançamento de feature — e isso é o sinal. O capital foi para aquisições (Educbank, Nero.AI), a maior plataforma de IA educacional do mundo refez o produto com base em dado de uso real, a regulação ganhou data e a Anthropic entrou na sala de aula pela porta do professor — com gratuidade e privacidade negociada com o sindicato. O mercado saiu da fase de prometer e entrou na fase de provar e consolidar: quem mede aprendizagem de verdade, controla camadas da operação escolar, sela confiança com o professor e chega adequado à homologação do CNE define o próximo ciclo.
                 </p>
               </div>
             </div>
@@ -1870,6 +1885,15 @@ export default function App() {
                   cor: "border-[#6B46C1]",
                   corBadge: "bg-[#6B46C1] text-white",
                   area: "Preparatório / Iônica"
+                },
+                {
+                  sinal: "Anthropic lançou Claude for Teachers: gratuito, alinhado a padrões e com privacidade validada pelo sindicato",
+                  oportunidade: "Assistente docente BNCC com pacto público de privacidade",
+                  impacto: "Replicar o modelo no contexto BR: assistente alinhado à BNCC e às diretrizes do CNE, com compromisso público de privacidade (LGPD) validado por entidades docentes. Confiança institucional vira canal de distribuição — antes que Anthropic ou Google o façam aqui.",
+                  prioridade: "Alta",
+                  cor: "border-[#6B46C1]",
+                  corBadge: "bg-[#6B46C1] text-white",
+                  area: "Professores / Compliance"
                 },
                 {
                   sinal: "Cogna foi a 90% do Educbank — camada financeira integrada ao ecossistema pedagógico",
